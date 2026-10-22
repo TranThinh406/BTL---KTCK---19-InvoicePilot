@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cấu hình hóa đơn · InvoicePilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/admin-invoice-settings.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <a class="brand" href="../../D%C3%B9ng%20chung/html/index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">InvoicePilot</span>
+    </a>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <p class="nav-label">Vận hành</p>
+      <a class="nav-item" href="admin-dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="16" width="7" height="5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Tổng quan hệ thống</span>
+      </a>
+      <a class="nav-item" href="admin-customer-management.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Khách hàng</span>
+      </a>
+      <a class="nav-item" href="admin-user-management.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 19c0-3.1 2.7-5 6-5s6 1.9 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 8h5M16 12h5M16 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Người dùng &amp; phân quyền</span>
+      </a>
+      <a class="nav-item" href="admin-product-catalog.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 12l8 4 8-4M4 16l8 4 8-4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Danh mục hàng hóa</span>
+      </a>
+
+      <p class="nav-label">Cấu hình hóa đơn</p>
+      <a class="nav-item is-active" href="admin-invoice-settings.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h9l4 4v14H6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10h7M9 13.5h7M9 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16.5" cy="6.5" r="1.6" stroke="currentColor" stroke-width="1.3"/></svg>
+        <span>Cài đặt hóa đơn</span>
+      </a>
+
+      <p class="nav-label">Giám sát &amp; kiểm soát</p>
+      <a class="nav-item" href="admin-audit-log.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Nhật ký hoạt động</span>
+      </a>
+      <a class="nav-item" href="admin-config-thresholds.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Ngưỡng cảnh báo</span>
+      </a>
+      <a class="nav-item" href="admin-data-permissions.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10" width="15" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 10V7.5a4 4 0 018 0V10" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/></svg>
+        <span>Phạm vi dữ liệu</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user">
+        <span class="avatar">Q</span>
+        <span class="user-meta">
+          <span class="user-name">Phạm Quốc Hưng</span>
+          <span class="user-role">Quản trị hệ thống</span>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================== MAIN ============================== -->
+  <div class="main">
+
+    <header class="topbar">
+      <nav class="crumb" aria-label="Đường dẫn">
+        <a href="admin-dashboard.html">Vận hành</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current">Cấu hình hóa đơn</span>
+      </nav>
+      <div class="topbar-actions">
+        <span class="stamp stamp--neutral mono">NĐ 123/2020 · TT 78/2021</span>
+        <span class="topbar-avatar" title="Phạm Quốc Hưng">Q</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ------------------------- PAGE HEAD ------------------------- -->
+      <section class="page-head">
+        <div>
+          <div class="head-line">
+            <h1 class="page-title">Cấu hình hóa đơn</h1>
+            <span class="stamp stamp--info" id="head-stamp">Đã kết nối eHĐĐT</span>
+          </div>
+          <p class="page-sub">
+            <span class="page-sub-text">Mẫu số, ký hiệu, quy tắc cấp số, biểu mẫu và luồng phát hành</span>
+            <span class="head-dot">·</span>
+            <span class="page-sub-text mono">Lưu lần cuối 09/10/2026 · 15:12 bởi Phạm Quốc Hưng</span>
+          </p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn--ghost" type="button" id="btn-reset">Khôi phục mặc định</button>
+          <button class="btn btn--primary" type="button" id="btn-save">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 5h11l3 3v11H5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 5v5h7M8 19v-5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Lưu cấu hình
+          </button>
+        </div>
+      </section>
+
+      <!-- --------------------------- PANEL 1 --------------------------- -->
+      <section class="panel" id="panel-series">
+
+        <div class="state-block" id="state-loading">
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <p class="state-note">Đang đọc thông báo phát hành và cấu hình hiện tại…</p>
+        </div>
+
+        <div class="state-block state-block--error" id="state-error" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.5v5.5m0 3h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <p class="state-title">Không tải được cấu hình hóa đơn</p>
+          <p class="state-desc">Dịch vụ cấp số và chữ ký số không phản hồi. Cấu hình đang giữ nguyên giá trị gần nhất — không có thay đổi nào bị mất.</p>
+          <button class="btn btn--ghost btn--sm" type="button" id="btn-retry">Thử lại</button>
+        </div>
+
+        <div class="state-block state-block--empty" id="state-empty" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h9l4 4v14H6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 11h7M9 15h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <p class="state-title">Chưa có mẫu số, ký hiệu hóa đơn nào</p>
+          <p class="state-desc">Hệ thống chưa nhận thông báo phát hành. Hãy thêm mẫu số và ký hiệu được cấp trước khi phát hành hóa đơn đầu tiên.</p>
+          <button class="btn btn--ghost btn--sm" type="button" id="btn-add-series">Thêm ký hiệu</button>
+        </div>
+
+        <div id="data-area" hidden>
+
+          <!-- KPI -->
+          <section class="kpi-row" id="kpi-row"></section>
+
+          <!-- BẢNG MẪU SỐ / KÝ HIỆU -->
+          <div class="table-head">
+            <p class="detail-title">Mẫu số &amp; ký hiệu đang quản lý</p>
+            <p class="mono table-head-note" id="series-note">—</p>
+          </div>
+
+          <div class="table-wrap">
+            <table class="series-table" id="series-table">
+              <thead>
+                <tr>
+                  <th>Mẫu số</th>
+                  <th>Ký hiệu</th>
+                  <th>Loại hóa đơn</th>
+                  <th>Số hiện tại</th>
+                  <th>Số tiếp theo</th>
+                  <th>Hiệu lực</th>
+                  <th>Phạm vi sử dụng</th>
+                  <th>Trạng thái</th>
+                </tr>
+              </thead>
+              <tbody id="series-rows"></tbody>
+            </table>
+          </div>
+
+          <footer class="table-foot">
+            <p class="mono" id="count-note">—</p>
+            <p class="foot-legend">Nhấp vào một ký hiệu để xem thông báo phát hành, đổi số hoặc tạm dừng</p>
+          </footer>
+
+        </div>
+      </section>
+
+      <!-- ------------------- CÀI ĐẶT + XEM TRƯỚC -------------------- -->
+      <section class="cfg-grid">
+        <div class="cfg-col">
+          <p class="detail-title">Quy tắc cấp số, làm tròn &amp; thuế</p>
+          <div class="form-row">
+            <div>
+              <label class="field-label" for="n-next">Số tiếp theo sẽ cấp</label>
+              <input class="form-input mono" id="n-next" type="number" min="1" step="1">
+              <p class="field-error" id="e-next" hidden></p>
+            </div>
+            <div>
+              <label class="field-label" for="n-step">Bước nhảy</label>
+              <input class="form-input mono" id="n-step" type="number" min="1" step="1">
+              <p class="field-error" id="e-step" hidden></p>
+            </div>
+            <div>
+              <label class="field-label" for="n-digits">Số chữ số của dải số</label>
+              <select class="form-select" id="n-digits">
+                <option value="6">6 chữ số</option>
+                <option value="7">7 chữ số</option>
+                <option value="8">8 chữ số</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-period">Chu kỳ cấp số</label>
+              <select class="form-select" id="n-period">
+                <option>Liên tục</option><option>Theo tháng</option><option>Theo năm</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-roundMoney">Làm tròn thành tiền</label>
+              <select class="form-select" id="n-roundMoney">
+                <option>0 ₫</option><option>10 ₫</option><option>1.000 ₫</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-roundTax">Làm tròn thuế GTGT</label>
+              <select class="form-select" id="n-roundTax">
+                <option>1 ₫</option><option>0 ₫</option><option>10 ₫</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-taxRate">Thuế suất GTGT mặc định</label>
+              <select class="form-select" id="n-taxRate">
+                <option>10% (chuẩn)</option><option>8% (ưu đãi)</option><option>5%</option><option>0% (không chịu thuế)</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-taxAccount">Tài khoản thuế mặc định</label>
+              <select class="form-select" id="n-taxAccount">
+                <option>3331 — Thuế GTGT đầu ra</option>
+                <option>33311 — Thuế GTGT đầu ra 10%</option>
+                <option>33312 — Thuế GTGT đầu ra 8%</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-dateFormat">Định dạng ngày trên hóa đơn</label>
+              <select class="form-select" id="n-dateFormat">
+                <option>dd/MM/yyyy</option><option>yyyy-MM-dd</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-currency">Đơn vị tiền tệ mặc định</label>
+              <select class="form-select" id="n-currency">
+                <option>VND</option><option>USD</option><option>EUR</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="n-termDays">Thời hạn thanh toán mặc định</label>
+              <input class="form-input mono" id="n-termDays" type="number" min="0" max="180" step="1">
+              <p class="field-error" id="e-termDays" hidden></p>
+            </div>
+          </div>
+          <div class="check-list">
+            <label class="check-line"><input type="checkbox" id="n-words"><span>Hiển thị số tiền bằng chữ</span></label>
+            <label class="check-line"><input type="checkbox" id="n-bilingual"><span>Song ngữ Việt – Anh trên cùng biểu mẫu</span></label>
+          </div>
+        </div>
+
+        <!-- XEM TRƯỚC -->
+        <div class="cfg-col cfg-col--preview">
+          <div class="preview-head-row">
+            <p class="detail-title">Tiếp theo sẽ phát hành</p>
+            <span class="stamp stamp--neutral mono">Xem trước</span>
+          </div>
+          <div class="preview-paper" id="preview"></div>
+          <p class="preview-note">Bản xem trước cập nhật theo cấu hình bên trái. Nội dung hiển thị để kiểm tra, không phải hóa đơn thật.</p>
+        </div>
+      </section>
+
+      <!-- ------------------- THÔNG TIN + TÍCH HỢP -------------------- -->
+      <section class="cfg-grid">
+        <div class="cfg-col">
+          <p class="detail-title">Thông tin hiển thị trên hóa đơn</p>
+          <div class="form-row">
+            <div class="span2">
+              <label class="field-label" for="c-name">Tên đơn vị bán hàng</label>
+              <input class="form-input" id="c-name" type="text">
+              <p class="field-error" id="e-name" hidden></p>
+            </div>
+            <div>
+              <label class="field-label" for="c-taxId">Mã số thuế</label>
+              <input class="form-input mono" id="c-taxId" type="text">
+              <p class="field-error" id="e-taxId" hidden></p>
+            </div>
+            <div>
+              <label class="field-label" for="c-hotline">Hotline</label>
+              <input class="form-input mono" id="c-hotline" type="text">
+            </div>
+            <div class="span2">
+              <label class="field-label" for="c-address">Địa chỉ</label>
+              <input class="form-input" id="c-address" type="text">
+            </div>
+            <div>
+              <label class="field-label" for="c-phone">Điện thoại</label>
+              <input class="form-input mono" id="c-phone" type="text">
+            </div>
+            <div>
+              <label class="field-label" for="c-email">Email nhận hóa đơn</label>
+              <input class="form-input mono" id="c-email" type="email">
+              <p class="field-error" id="e-email" hidden></p>
+            </div>
+            <div class="span2">
+              <label class="field-label" for="c-bank">Tài khoản ngân hàng hiển thị</label>
+              <input class="form-input mono" id="c-bank" type="text">
+            </div>
+            <div class="span2">
+              <label class="field-label" for="c-template">Biểu mẫu</label>
+              <select class="form-select" id="c-template">
+                <option>Mẫu biểu 01 — song ngữ</option>
+                <option>Mẫu biểu 02 — tiếng Việt</option>
+                <option>Mẫu biểu 03 — kèm bảng kê</option>
+              </select>
+            </div>
+            <div class="span2">
+              <label class="field-label" for="c-footer">Dòng ghi chú cuối hóa đơn</label>
+              <textarea class="form-area" id="c-footer"></textarea>
+            </div>
+          </div>
+          <div class="check-list">
+            <label class="check-line"><input type="checkbox" id="c-logo"><span>Hiển thị logo đơn vị ở góc trái</span></label>
+            <label class="check-line"><input type="checkbox" id="c-showBank"><span>Hiển thị tài khoản ngân hàng trên hóa đơn</span></label>
+          </div>
+        </div>
+
+        <div class="cfg-col">
+          <div class="preview-head-row">
+            <p class="detail-title">Tích hợp hóa đơn điện tử</p>
+            <span class="stamp stamp--info" id="p-stamp">Đã kết nối</span>
+          </div>
+          <div class="form-row">
+            <div class="span2">
+              <label class="field-label" for="p-provider">Nhà cung cấp dịch vụ</label>
+              <select class="form-select" id="p-provider">
+                <option>VNPT Invoice (eHoadon)</option>
+                <option>MeInvoice (MISA)</option>
+                <option>Einvoice (FPT)</option>
+                <option>eHoaDon (Viettel)</option>
+                <option>Không tích hợp — phát hành thủ công</option>
+              </select>
+            </div>
+            <div class="span2">
+              <label class="field-label" for="p-endpoint">Đường dẫn kết nối</label>
+              <input class="form-input mono" id="p-endpoint" type="text">
+              <p class="field-error" id="e-endpoint" hidden></p>
+            </div>
+            <div>
+              <label class="field-label" for="p-account">Tài khoản tích hợp</label>
+              <input class="form-input mono" id="p-account" type="text">
+            </div>
+            <div>
+              <label class="field-label" for="p-timeout">Thời gian chờ phản hồi (giây)</label>
+              <input class="form-input mono" id="p-timeout" type="number" min="5" max="120">
+            </div>
+            <div>
+              <label class="field-label" for="p-cert">Nhà cung cấp chữ ký số</label>
+              <select class="form-select" id="p-cert">
+                <option>VNPT-CA</option><option>Viettel-CA</option><option>CK-CA</option><option>SmartCA</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="p-certExpire">Ngày hết hạn chữ ký</label>
+              <input class="form-input mono" id="p-certExpire" type="text">
+            </div>
+          </div>
+          <div class="check-list">
+            <label class="check-line"><input type="checkbox" id="p-autoSend"><span>Tự động gửi hóa đơn tới email khách hàng</span></label>
+            <label class="check-line"><input type="checkbox" id="p-syncTax"><span>Đồng bộ kết quả xử lý với cơ quan thuế</span></label>
+          </div>
+          <div class="form-row">
+            <div class="span2">
+              <button class="btn btn--ghost" type="button" id="btn-test">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 10-2.4 5.7M20 6v5h-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Thử kết nối
+              </button>
+              <p class="mono form-hint" id="p-last">Kiểm tra gần nhất 12/10/2026 · 07:02</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------- LUỒNG PHÁT HÀNH ---------------------- -->
+      <section class="panel flow-panel">
+        <div class="table-head">
+          <p class="detail-title">Luồng phát hành &amp; phê duyệt</p>
+          <p class="mono table-head-note">Áp dụng cho mọi ký hiệu đang hoạt động</p>
+        </div>
+        <div class="switch-list">
+          <label class="switch-item">
+            <input type="checkbox" id="w-approval">
+            <div>
+              <p class="switch-title">Yêu cầu phê duyệt trước khi phát hành</p>
+              <p class="switch-hint">Áp dụng cho hóa đơn từ mức tiền này trở lên.</p>
+              <div class="inline-field">
+                <input class="form-input mono" id="w-approvalLimit" type="number" min="0" step="1000000">
+                <span class="mono unit">₫ / hóa đơn</span>
+              </div>
+            </div>
+          </label>
+          <label class="switch-item">
+            <input type="checkbox" id="w-autoIssue">
+            <div>
+              <p class="switch-title">Tự động cấp số và phát hành khi duyệt</p>
+              <p class="switch-hint">Tắt: hóa đơn ở trạng thái "Chờ cấp số" cho tới khi kế toán xác nhận.</p>
+            </div>
+          </label>
+          <label class="switch-item">
+            <input type="checkbox" id="w-autoEmail">
+            <div>
+              <p class="switch-title">Gửi email kèm tệp PDF sau phát hành</p>
+              <p class="switch-hint">Dùng địa chỉ email liên hệ đã lưu trong hồ sơ khách hàng.</p>
+            </div>
+          </label>
+          <label class="switch-item">
+            <input type="checkbox" id="w-savePdf">
+            <div>
+              <p class="switch-title">Lưu bản PDF đã ký vào kho chứng từ</p>
+              <p class="switch-hint">Tệp được giữ lại theo thời hạn lưu trữ của hệ thống.</p>
+            </div>
+          </label>
+          <label class="switch-item">
+            <input type="checkbox" id="w-allowNeg">
+            <div>
+              <p class="switch-title">Cho phép phát hành số âm, điều chỉnh giảm</p>
+              <p class="switch-hint">Chỉ dùng cho hóa đơn điều chỉnh — không áp dụng cho hóa đơn GTGT.</p>
+            </div>
+          </label>
+          <label class="switch-item">
+            <input type="checkbox" id="w-remind">
+            <div>
+              <p class="switch-title">Nhắc khách hàng chưa thanh toán</p>
+              <p class="switch-hint">Tự gửi nhắc sau số ngày quá hạn dưới đây.</p>
+              <div class="inline-field">
+                <input class="form-input mono" id="w-reminderDays" type="number" min="0" max="30">
+                <span class="mono unit">ngày sau hạn</span>
+              </div>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- ------------------------ HAI KHỐI PHỤ ------------------------ -->
+      <section class="split-row">
+        <div class="split-col">
+          <p class="detail-title">Phân bố hóa đơn theo ký hiệu</p>
+          <div class="comp" id="series-bars"></div>
+        </div>
+        <div class="split-col">
+          <p class="detail-title">Cảnh báo cấu hình</p>
+          <div class="watch-list" id="config-alerts"></div>
+        </div>
+      </section>
+
+      <!-- -------------------------- NOTE STRIP ------------------------ -->
+      <section class="note-strip">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor"/></svg>
+        <p>
+          Hóa đơn điện tử phát hành theo Nghị định 123/2020/NĐ-CP và Thông tư 78/2021/TT-BTC;
+          mẫu số, ký hiệu và dải số phải khớp với thông báo phát hành đã gửi cơ quan thuế.
+          Mọi thay đổi ở trang này đều tạo bản ghi trong
+          <a href="admin-audit-log.html">Nhật ký hoạt động</a>;
+          danh mục hàng hóa và thuế suất dùng khi lên dòng hóa đơn nằm ở
+          <a href="admin-product-catalog.html">Danh mục hàng hóa</a>;
+          ngưỡng cảnh báo riêng cho hóa đơn quá hạn cấu hình tại
+          <a href="admin-config-thresholds.html">Ngưỡng cảnh báo</a>.
+        </p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============================== DRAWER ============================== -->
+<div class="drawer-overlay" id="drawer-overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" hidden>
+  <header class="drawer-head">
+    <div>
+      <p class="detail-title" id="drawer-kicker">Ký hiệu hóa đơn</p>
+      <h2 class="drawer-title" id="drawer-title">—</h2>
+    </div>
+    <button class="drawer-close" type="button" id="drawer-close" aria-label="Đóng">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+  <div class="drawer-body" id="drawer-body"></div>
+  <footer class="drawer-foot" id="drawer-foot"></footer>
+</aside>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="../../D%C3%B9ng%20chung/js/mock-data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/utils.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/api.js"></script>
+<script src="../js/admin-invoice-settings.js"></script>
+</body>
+</html>

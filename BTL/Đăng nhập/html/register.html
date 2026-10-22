@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng ký tài khoản · InvoicePilot</title>
+<meta name="description" content="Tạo tài khoản InvoicePilot để bắt đầu theo dõi hóa đơn và công nợ.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/style.css">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/responsive.css">
+</head>
+<body data-page="register" data-layout="public">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<main id="main" class="auth-shell">
+  <aside class="auth-visual">
+    <h2>Bắt đầu theo dõi công nợ chỉ trong vài phút.</h2>
+    <p>Tạo tài khoản, chọn vai trò và sử dụng ngay dữ liệu mẫu sẵn có để làm quen với quy trình hóa đơn.</p>
+
+    <div class="visual-quote">
+      <p>“Phần kiểm tra hợp lệ của biểu mẫu giúp nhân viên mới không bỏ sót thông tin quan trọng khi lập hóa đơn.”</p>
+      <div class="who">
+        <i>QB</i>
+        <div><strong>Quốc Bảo</strong><span>Trưởng phòng Kinh doanh</span></div>
+      </div>
+    </div>
+
+    <div class="visual-metrics">
+      <div><b>4</b><span>Vai trò nghiệp vụ</span></div>
+      <div><b>3</b><span>Trợ lý AI</span></div>
+      <div><b>100%</b><span>Chạy trên trình duyệt</span></div>
+    </div>
+  </aside>
+
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <div class="auth-head">
+        <div class="accent-line"></div>
+        <h1>Tạo tài khoản</h1>
+        <p class="lead">Điền thông tin bên dưới. Trường có dấu <span class="req" aria-hidden="true">*</span> là bắt buộc.</p>
+      </div>
+
+      <div class="info-banner danger-banner" id="register-error" role="alert" hidden></div>
+
+      <form id="register-form" novalidate>
+        <div class="field">
+          <label class="label" for="reg-name">Họ và tên<span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id="reg-name" name="name" type="text" autocomplete="name"
+                 placeholder="Nguyễn Văn A" aria-describedby="reg-name-error" required>
+          <p class="field-error" id="reg-name-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="label" for="reg-email">Email<span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id="reg-email" name="email" type="email" autocomplete="email"
+                 placeholder="ten@doanhnghiep.vn" aria-describedby="reg-email-hint reg-email-error" required>
+          <p class="hint" id="reg-email-hint">Email dùng để đăng nhập và nhận thông báo hạn thanh toán.</p>
+          <p class="field-error" id="reg-email-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="label" for="reg-company">Tên doanh nghiệp</label>
+          <input class="input" id="reg-company" name="company" type="text" autocomplete="organization"
+                 placeholder="Công ty TNHH …">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label class="label" for="reg-password">Mật khẩu<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="reg-password" name="password" type="password"
+                   autocomplete="new-password" aria-describedby="password-strength-label reg-password-error" required>
+            <div class="strength" id="password-strength" data-score="0" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <p class="strength-label" id="password-strength-label">Chưa nhập mật khẩu</p>
+            <p class="field-error" id="reg-password-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="reg-confirm">Nhập lại mật khẩu<span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="reg-confirm" name="confirm" type="password"
+                   autocomplete="new-password" aria-describedby="reg-confirm-error" required>
+            <p class="field-error" id="reg-confirm-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="checkline">
+            <input type="checkbox" id="reg-terms">
+            <span>Tôi đồng ý với <a href="#">điều khoản sử dụng</a> và <a href="#">chính sách bảo mật</a> của InvoicePilot.</span>
+          </label>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit" id="register-submit">Tạo tài khoản</button>
+      </form>
+
+      <!-- Trạng thái thành công -->
+      <section class="state" id="register-success" hidden>
+        <div class="state-icon" style="background:var(--brand-soft);color:var(--brand)"></div>
+        <h2 tabindex="-1">Tạo tài khoản thành công</h2>
+        <p>Tài khoản của bạn đã được lưu tạm trên trình duyệt này. Hãy đăng nhập để bắt đầu quản lý hóa đơn.</p>
+        <a class="btn btn-primary" href="login.html">Đăng nhập ngay</a>
+      </section>
+
+      <p class="auth-foot">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+    </div>
+  </div>
+</main>
+
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../../D%C3%B9ng%20chung/js/data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/ui.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cài đặt · InvoicePilot</title>
+<meta name="description" content="Cấu hình doanh nghiệp, giao diện, thông báo và bảo mật cho InvoicePilot.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="settings" data-layout="app" data-auth="required">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<main id="main">
+  <div class="page page--settings">
+    <header class="page-head">
+      <div>
+        <h1>Cài đặt</h1>
+        <p class="lead">Tùy chỉnh thông tin doanh nghiệp, giao diện, thông báo và mức độ bảo mật cho tài khoản của bạn.</p>
+      </div>
+      <button class="btn btn-ghost" type="button" id="settings-reset">Khôi phục mặc định</button>
+    </header>
+
+    <div class="info-banner" style="margin-bottom:22px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.2"/></svg>
+      <span>Xem trước kết quả cài đặt: <strong id="preview-line"></strong></span>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Nhóm cài đặt">
+      <button class="tab" role="tab" id="tab-general" aria-controls="panel-general" aria-selected="true" tabindex="0">Chung</button>
+      <button class="tab" role="tab" id="tab-appearance" aria-controls="panel-appearance" aria-selected="false" tabindex="-1">Giao diện</button>
+      <button class="tab" role="tab" id="tab-notify" aria-controls="panel-notify" aria-selected="false" tabindex="-1">Thông báo</button>
+      <button class="tab" role="tab" id="tab-security" aria-controls="panel-security" aria-selected="false" tabindex="-1">Bảo mật</button>
+    </div>
+
+    <!-- ===== Chung ===== -->
+    <section class="card tab-panel" role="tabpanel" id="panel-general" aria-labelledby="tab-general" tabindex="0">
+      <p class="card-title-sm">Thông tin doanh nghiệp</p>
+      <div class="field-row">
+        <div class="field">
+          <label class="label" for="set-company">Tên doanh nghiệp</label>
+          <input class="input" id="set-company" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label class="label" for="set-currency">Đơn vị tiền tệ</label>
+          <select class="select" id="set-currency">
+            <option value="VND">VND — Việt Nam Đồng</option>
+            <option value="USD">USD — Đô la Mỹ</option>
+            <option value="EUR">EUR — Euro</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label class="label" for="set-dateformat">Định dạng ngày</label>
+          <select class="select" id="set-dateformat">
+            <option value="dd/MM/yyyy">dd/MM/yyyy</option>
+            <option value="MM/dd/yyyy">MM/dd/yyyy</option>
+            <option value="yyyy-MM-dd">yyyy-MM-dd</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label" for="set-timezone">Múi giờ</label>
+          <select class="select" id="set-timezone">
+            <option value="Asia/Ho_Chi_Minh">Asia/Ho_Chi_Minh (GMT+7)</option>
+            <option value="Asia/Bangkok">Asia/Bangkok (GMT+7)</option>
+            <option value="Asia/Tokyo">Asia/Tokyo (GMT+9)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Giao diện ===== -->
+    <section class="card tab-panel" role="tabpanel" id="panel-appearance" aria-labelledby="tab-appearance" tabindex="0" hidden>
+      <p class="card-title-sm">Chủ đề</p>
+      <div class="choice-grid" style="margin-bottom:22px">
+        <label class="choice">
+          <input type="radio" name="theme" value="light">
+          <span class="choice-title">Sáng</span>
+          <span class="choice-desc">Nền giấy xanh-xám, dễ đọc khi làm việc ban ngày.</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="theme" value="dark">
+          <span class="choice-title">Tối</span>
+          <span class="choice-desc">Giảm chói khi xử lý hóa đơn vào buổi tối.</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="theme" value="auto">
+          <span class="choice-title">Theo hệ thống</span>
+          <span class="choice-desc">Tự động theo cài đặt giao diện của thiết bị.</span>
+        </label>
+      </div>
+
+      <div class="field" style="max-width:340px">
+        <label class="label" for="set-density">Mật độ hiển thị bảng</label>
+        <select class="select" id="set-density">
+          <option value="comfortable">Thoáng — phù hợp màn hình lớn</option>
+          <option value="compact">Gọn — hiển thị nhiều dòng hơn</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- ===== Thông báo ===== -->
+    <section class="card tab-panel" role="tabpanel" id="panel-notify" aria-labelledby="tab-notify" tabindex="0" hidden>
+      <p class="card-title-sm">Kênh và nội dung thông báo</p>
+      <div class="switch-row">
+        <div class="switch-text"><strong>Hóa đơn đến hạn</strong><span>Nhắc khi hóa đơn còn 3 ngày nữa đến hạn thanh toán.</span></div>
+        <label class="switch"><input type="checkbox" data-switch="nInvoice"><span class="track"></span></label>
+      </div>
+      <div class="switch-row">
+        <div class="switch-text"><strong>Phản hồi nhắc nợ</strong><span>Thông báo khi khách hàng xác nhận hoặc từ chối yêu cầu thanh toán.</span></div>
+        <label class="switch"><input type="checkbox" data-switch="nReminder"><span class="track"></span></label>
+      </div>
+      <div class="switch-row">
+        <div class="switch-text"><strong>Kết quả AI</strong><span>Thông báo khi AI-1/2/3 hoàn tất phân tích và có đề xuất mới.</span></div>
+        <label class="switch"><input type="checkbox" data-switch="nAi"><span class="track"></span></label>
+      </div>
+      <div class="switch-row">
+        <div class="switch-text"><strong>Báo cáo tuần</strong><span>Gửi bản tóm tắt công nợ vào sáng thứ Hai hàng tuần.</span></div>
+        <label class="switch"><input type="checkbox" data-switch="nWeekly"><span class="track"></span></label>
+      </div>
+      <div class="switch-row">
+        <div class="switch-text"><strong>Âm thanh thông báo</strong><span>Phát âm báo khi có thông báo quan trọng.</span></div>
+        <label class="switch"><input type="checkbox" data-switch="nSound"><span class="track"></span></label>
+      </div>
+    </section>
+
+    <!-- ===== Bảo mật ===== -->
+    <section class="card tab-panel" role="tabpanel" id="panel-security" aria-labelledby="tab-security" tabindex="0" hidden>
+      <p class="card-title-sm">Bảo vệ tài khoản</p>
+      <div class="switch-row">
+        <div class="switch-text"><strong>Xác thực hai bước</strong><span>Yêu cầu mã xác thực khi đăng nhập trên thiết bị mới.</span></div>
+        <label class="switch"><input type="checkbox" data-switch="twoFactor"><span class="track"></span></label>
+      </div>
+      <div class="field" style="max-width:340px;margin-top:20px">
+        <label class="label" for="set-timeout">Tự động đăng xuất sau</label>
+        <select class="select" id="set-timeout">
+          <option value="15">15 phút không hoạt động</option>
+          <option value="30">30 phút không hoạt động</option>
+          <option value="60">60 phút không hoạt động</option>
+          <option value="0">Không bao giờ</option>
+        </select>
+      </div>
+      <div class="warn-banner info-banner" style="margin-top:22px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4 2.8 20h18.4z"/><path d="M12 10v4.5M12 17.4v.2"/></svg>
+        <span>Nguyên mẫu này mô phỏng cài đặt bảo mật bằng LocalStorage. Trong hệ thống thật, các thiết lập này phải được thực thi ở phía máy chủ.</span>
+      </div>
+    </section>
+
+    <!-- Thanh lưu thay đổi -->
+    <div class="card" id="save-bar" hidden style="margin-top:18px;position:sticky;bottom:16px">
+      <div class="form-actions">
+        <strong>Bạn có thay đổi chưa lưu.</strong>
+        <span class="spacer"></span>
+        <button class="btn btn-ghost" type="button" id="settings-discard">Hủy thay đổi</button>
+        <button class="btn btn-primary" type="button" id="settings-save">Lưu cài đặt</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../js/data.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

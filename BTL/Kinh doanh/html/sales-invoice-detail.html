@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hóa đơn HD-2026-0731 · InvoicePilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/invoice-detail.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <a class="brand" href="../../D%C3%B9ng%20chung/html/index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">InvoicePilot</span>
+    </a>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <p class="nav-label">Kinh doanh</p>
+      <a class="nav-item" href="sales-dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="16" width="7" height="5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Tổng quan</span>
+      </a>
+      <a class="nav-item" href="sales-customer-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Khách hàng</span>
+      </a>
+      <a class="nav-item" href="sales-order-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16l-1.5 12.5H5.5L4 7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7V5.5a3 3 0 016 0V7" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Đơn hàng</span>
+      </a>
+      <a class="nav-item is-active" href="sales-invoice-list.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18H6z" stroke="currentColor" stroke-width="1.5"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Hóa đơn</span>
+      </a>
+      <a class="nav-item" href="sales-customer-balance.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9.5h18M7 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Số dư công nợ</span>
+      </a>
+      <a class="nav-item" href="sales-payment-reminders.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 9a6 6 0 10-12 0c0 5-2 6-2 6h16s-2-1-2-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10.5 19a2 2 0 003 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Nhắc nợ thanh toán</span>
+        <span class="nav-count">6</span>
+      </a>
+      <a class="nav-item" href="sales-followup.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v12H8l-4 4V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Ghi chú thu hồi</span>
+      </a>
+
+      <p class="nav-label">Cảnh báo</p>
+      <a class="nav-item" href="../../K%E1%BA%BF%20to%C3%A1n/html/accountant-alerts.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cảnh báo công nợ</span>
+        <span class="nav-count">3</span>
+      </a>
+
+      <p class="nav-label">Hệ thống</p>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-audit-log.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Nhật ký hoạt động</span>
+      </a>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-settings.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cấu hình</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user">
+        <span class="avatar">H</span>
+        <span class="user-meta">
+          <span class="user-name">Phạm Thu Hà</span>
+          <span class="user-role">Nhân viên kinh doanh</span>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================== MAIN ============================== -->
+  <div class="main">
+
+    <header class="topbar">
+      <nav class="crumb" aria-label="Đường dẫn">
+        <a href="sales-dashboard.html">Kinh doanh</a>
+        <span class="crumb-sep">/</span>
+        <a href="sales-invoice-list.html">Hóa đơn</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current mono">HD-2026-0731</span>
+      </nav>
+      <div class="topbar-actions">
+        <div class="period-pick">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17M8 3.5V6m8-2.5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span class="mono">Kỳ 10/2026</span>
+          <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <span class="topbar-avatar" title="Phạm Thu Hà">H</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ------------------------- PAGE HEAD ------------------------- -->
+      <section class="page-head">
+        <div>
+          <div class="head-line">
+            <h1 class="page-title">Hóa đơn <span class="mono">HD-2026-0731</span></h1>
+            <span class="stamp stamp--danger">Quá hạn thanh toán</span>
+            <span class="stamp stamp--neutral">Hóa đơn điện tử</span>
+          </div>
+          <p class="page-sub">
+            <span class="page-sub-text">
+              Phát hành 12/06/2026 · hạn thanh toán 12/07/2026 ·
+              <strong class="is-bad">quá hạn 92 ngày</strong> · lập từ đơn hàng
+              <a class="link" href="sales-order-detail.html">DH-2026-0431</a>
+            </span>
+          </p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn--ghost" type="button" id="btn-pdf">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h8l4 4v14H6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 3v4h4M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            In / Tải PDF
+          </button>
+          <button class="btn btn--ghost" type="button" id="btn-resend">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 12l16-7-7 16-2.2-6.8L4 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Gửi lại hóa đơn
+          </button>
+          <button class="btn btn--ghost" type="button" id="btn-adjust">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 16l9.5-9.5 2 2L8 18l-2.6.6L6 16z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            Điều chỉnh hóa đơn
+          </button>
+          <button class="btn btn--primary" type="button" id="btn-remind">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M18 9a6 6 0 10-12 0c0 5-2 6-2 6h16s-2-1-2-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10.5 19a2 2 0 003 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            Tạo nhắc nợ
+          </button>
+        </div>
+      </section>
+
+      <!-- ---------------------- CONFLICT BANNER ---------------------- -->
+      <div class="alert-band alert-band--warn" id="conflict-band" hidden>
+        <svg class="alert-ico" viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div class="alert-body">
+          <p class="alert-title">Hóa đơn đã thay đổi</p>
+          <p class="alert-text" id="conflict-text"></p>
+        </div>
+        <button class="btn btn--ghost btn--sm" type="button" id="conflict-reload">Tải bản mới nhất</button>
+      </div>
+
+      <!-- ----------------------- QUYỀN ĐIỀU CHỈNH --------------------- -->
+      <div class="alert-band alert-band--info">
+        <svg class="alert-ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor"/></svg>
+        <div class="alert-body">
+          <p class="alert-title">Hóa đơn đã phát hành không thể sửa trực tiếp</p>
+          <p class="alert-text">
+            Theo quy định hóa đơn điện tử, mọi sai lệch phải xử lý bằng
+            <strong>hóa đơn điều chỉnh</strong> hoặc <strong>hóa đơn thay thế</strong>, do Kế toán duyệt.
+            Bạn có thể tạo yêu cầu điều chỉnh kèm lý do; hệ thống lưu lại toàn bộ thay đổi trong nhật ký.
+          </p>
+        </div>
+      </div>
+
+      <!-- --------------------------- PANEL ---------------------------- -->
+      <section class="panel" id="panel">
+
+        <div class="state-block" id="state-loading">
+          <div class="skeleton-sheet"></div>
+          <p class="state-note">Đang tải nội dung hóa đơn HD-2026-0731…</p>
+        </div>
+
+        <div class="state-block state-block--error" id="state-error" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.5v5.5m0 3h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <p class="state-title">Không tải được nội dung hóa đơn</p>
+          <p class="state-desc">Máy chủ không phản hồi. Số liệu công nợ của khách hàng không bị ảnh hưởng.</p>
+          <button class="btn btn--ghost btn--sm" type="button" id="btn-retry">Thử lại</button>
+        </div>
+
+        <div class="state-block state-block--empty" id="state-empty" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18H6z" stroke="currentColor" stroke-width="1.3"/><path d="M9 12h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <p class="state-title">Không tìm thấy hóa đơn này</p>
+          <p class="state-desc">Hóa đơn có thể đã bị thu hồi hoặc bạn không có quyền xem. Hãy quay lại danh sách hóa đơn.</p>
+          <button class="btn btn--ghost btn--sm" type="button" id="btn-empty-back">Về danh sách hóa đơn</button>
+        </div>
+
+        <div id="data-area" hidden>
+          <div class="doc-layout">
+
+            <!-- Tờ hóa đơn -->
+            <div class="doc-main">
+              <article class="sheet" id="sheet"></article>
+            </div>
+
+            <!-- Rail -->
+            <aside class="rail">
+              <div class="rail-card">
+                <p class="detail-title">Thông tin hóa đơn</p>
+                <dl class="facts">
+                  <div class="fact"><dt>Mã hóa đơn</dt><dd class="mono is-strong" id="r-code">—</dd></div>
+                  <div class="fact"><dt>Loại hóa đơn</dt><dd id="r-type">—</dd></div>
+                  <div class="fact"><dt>Ngày phát hành</dt><dd class="mono" id="r-issued">—</dd></div>
+                  <div class="fact"><dt>Hạn thanh toán</dt><dd class="mono is-bad" id="r-due">—</dd></div>
+                  <div class="fact"><dt>Đơn hàng</dt><dd><a class="link mono" id="r-order" href="sales-order-detail.html">—</a></dd></div>
+                  <div class="fact"><dt>Hợp đồng</dt><dd class="mono" id="r-contract">—</dd></div>
+                  <div class="fact"><dt>Kho xuất hàng</dt><dd id="r-warehouse">—</dd></div>
+                  <div class="fact"><dt>Điều kiện thanh toán</dt><dd id="r-term">—</dd></div>
+                  <div class="fact"><dt>Nhân viên phụ trách</dt><dd id="r-owner">—</dd></div>
+                  <div class="fact"><dt>Đã gửi cho khách</dt><dd id="r-sent">—</dd></div>
+                </dl>
+              </div>
+
+              <div class="rail-card">
+                <p class="detail-title">Tiến độ thu tiền</p>
+                <div class="pay">
+                  <div class="pay-head">
+                    <span class="pay-pct mono" id="pay-pct">0%</span>
+                    <span class="pay-desc mono" id="pay-desc">—</span>
+                  </div>
+                  <div class="pay-track">
+                    <span class="pay-fill" id="pay-fill" style="width:0%"></span>
+                  </div>
+                  <dl class="pay-legend">
+                    <div><dt>Đã thu</dt><dd class="mono is-ok" id="pay-paid">—</dd></div>
+                    <div><dt>Còn phải thu</dt><dd class="mono is-bad" id="pay-remaining">—</dd></div>
+                    <div><dt>Tổng giá trị</dt><dd class="mono" id="pay-total">—</dd></div>
+                  </dl>
+                </div>
+
+                <p class="detail-title" style="margin-top:22px">Tuổi nợ của hóa đơn</p>
+                <div class="age" id="age-scale">
+                  <div class="age-col"><span class="age-bar" data-bucket="0"></span><p class="age-label">0–30</p></div>
+                  <div class="age-col"><span class="age-bar" data-bucket="1"></span><p class="age-label">31–60</p></div>
+                  <div class="age-col"><span class="age-bar" data-bucket="2"></span><p class="age-label">61–90</p></div>
+                  <div class="age-col"><span class="age-bar is-hot" data-bucket="3"></span><p class="age-label">90+</p></div>
+                </div>
+                <p class="field-hint" id="age-note">Toàn bộ 152.500.000 ₫ còn nợ nằm ở nhóm trên 90 ngày.</p>
+              </div>
+
+              <div class="rail-card rail-card--cta">
+                <p class="cta-title">Cần thu hồi khoản này?</p>
+                <p class="cta-desc">
+                  Hóa đơn này đang nằm đầu danh sách nhắc nợ của
+                  <a class="link" href="sales-customer-detail.html">Công ty TNHH An Phát</a>.
+                </p>
+                <a class="btn btn--primary btn--block" href="sales-payment-reminders.html">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M18 9a6 6 0 10-12 0c0 5-2 6-2 6h16s-2-1-2-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10.5 19a2 2 0 003 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  Mở trang nhắc nợ
+                </a>
+              </div>
+            </aside>
+          </div>
+
+          <!-- ------------------- THANH TOÁN + NHẬT KÝ ------------------ -->
+          <div class="split">
+            <section class="split-col">
+              <p class="detail-title">Lịch sử thanh toán</p>
+              <table class="pay-table">
+                <thead>
+                  <tr>
+                    <th>Ngày</th>
+                    <th>Nội dung</th>
+                    <th>Phương thức</th>
+                    <th class="num">Số tiền</th>
+                    <th class="num">Còn lại</th>
+                  </tr>
+                </thead>
+                <tbody id="pay-records"></tbody>
+              </table>
+              <p class="field-hint">
+                Số liệu thu tiền do Kế toán ghi nhận. Nhân viên kinh doanh chỉ xem và dùng để theo dõi công nợ.
+              </p>
+            </section>
+
+            <section class="split-col">
+              <p class="detail-title">Nhật ký thay đổi</p>
+              <div class="trace" id="trace"></div>
+            </section>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ------------------------ DEBT NOTE ------------------------- -->
+      <section class="note-strip">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor"/></svg>
+        <p>
+          Hóa đơn điện tử <strong>HD-2026-0731</strong> đã được ký số và cấp mã cơ quan thuế.
+          Bản in từ hệ thống có giá trị pháp lý tương đương bản PDF đã gửi khách hàng.
+          Mọi thay đổi sau khi phát hành chỉ được thực hiện qua
+          <a href="../../K%E1%BA%BF%20to%C3%A1n/html/accountant-invoice-adjustment.html">quy trình điều chỉnh hóa đơn</a>.
+        </p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============================== MODAL ============================== -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <h2 class="modal-title" id="modal-title">Xác nhận</h2>
+      <button class="pop-close" type="button" id="modal-x" aria-label="Đóng">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <p class="modal-desc" id="modal-desc"></p>
+
+    <div class="modal-form" id="modal-resend" hidden>
+      <div class="field">
+        <label class="field-label" for="m-email">Người nhận <em>*</em></label>
+        <input class="input input--mono" id="m-email" value="nhaplieu@anphat.com.vn">
+        <p class="field-error" id="resend-error" hidden>Địa chỉ email không hợp lệ.</p>
+      </div>
+      <div class="field">
+        <label class="field-label" for="m-message">Lời nhắn</label>
+        <textarea class="input" id="m-message" rows="3" placeholder="Kính gửi quý khách, xin đính kèm lại hóa đơn…"></textarea>
+      </div>
+    </div>
+
+    <div class="modal-form" id="modal-adjust" hidden>
+      <div class="field">
+        <label class="field-label" for="m-adj-amount">Số tiền cần điều chỉnh <em>*</em></label>
+        <input class="input input--mono" id="m-adj-amount" inputmode="numeric" placeholder="0">
+        <p class="field-error" id="adj-error" hidden>Số tiền không hợp lệ hoặc vượt quá giá trị hóa đơn.</p>
+      </div>
+      <div class="field">
+        <label class="field-label" for="m-adj-reason">Lý do điều chỉnh <em>*</em></label>
+        <textarea class="input" id="m-adj-reason" rows="3" placeholder="Ví dụ: sai lệch số lượng giao thực tế so với hóa đơn…"></textarea>
+      </div>
+      <p class="field-hint">
+        Yêu cầu được gửi tới Kế toán để lập hóa đơn điều chỉnh. Hóa đơn gốc không bị thay đổi.
+      </p>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn--ghost" type="button" id="modal-cancel">Hủy bỏ</button>
+      <button class="btn btn--primary" type="button" id="modal-ok">Xác nhận</button>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="../../D%C3%B9ng%20chung/js/mock-data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/utils.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/api.js"></script>
+<script src="../js/invoice-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 · Không tìm thấy trang · InvoicePilot</title>
+<meta name="description" content="Trang bạn tìm không tồn tại. Tìm lại màn hình cần dùng trong InvoicePilot.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/style.css">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/responsive.css">
+</head>
+<body data-page="404" data-layout="public">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<main id="main" class="error-page">
+  <div style="width:100%;max-width:620px">
+    <p class="error-code">404</p>
+    <h1>Trang này không tồn tại</h1>
+    <p class="lead">Đường dẫn <strong id="bad-path">/trang-khong-ton-tai</strong> không khớp với màn hình nào. Dùng ô tìm kiếm bên dưới để mở lại màn hình bạn cần.</p>
+
+    <form id="notfound-form" class="card" style="text-align:left">
+      <div class="field" style="margin-bottom:0">
+        <label class="label" for="notfound-search">Tìm màn hình</label>
+        <input class="input" id="notfound-search" type="search" placeholder="Ví dụ: hóa đơn, công nợ, nhắc, cấu hình…" autocomplete="off">
+        <p class="hint">Tìm theo tên màn hình, nhóm vai trò hoặc tên tệp HTML.</p>
+      </div>
+    </form>
+
+    <ul class="search-results" id="notfound-results"></ul>
+
+    <div class="error-actions" style="margin-top:26px">
+      <a class="btn btn-primary" href="../../D%C3%B9ng%20chung/html/index.html">Về trang chủ</a>
+      <a class="btn btn-ghost" href="../../D%C3%B9ng%20chung/html/notifications.html">Xem thông báo</a>
+    </div>
+
+    <div class="grid grid-3" style="margin-top:32px;text-align:left">
+      <a class="feature-card" href="../../K%E1%BA%BF%20to%C3%A1n/html/accountant-invoice-list.html"><h3>Kế toán</h3><p>Quản lý hóa đơn và đối chiếu công nợ.</p></a>
+      <a class="feature-card" href="../../Kinh%20doanh/html/sales-customer-balance.html"><h3>Kinh doanh</h3><p>Theo dõi công nợ khách hàng và nhắc hạn.</p></a>
+      <a class="feature-card" href="../../Qu%E1%BA%A3n%20l%C3%BD/html/manager-receivable-dashboard.html"><h3>Quản lý</h3><p>Dashboard công nợ và dự báo dòng tiền.</p></a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../../D%C3%B9ng%20chung/js/data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/ui.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tạo hóa đơn · InvoicePilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/invoice-form.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <a class="brand" href="../../D%C3%B9ng%20chung/html/index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">InvoicePilot</span>
+    </a>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <p class="nav-label">Nghiệp vụ</p>
+      <a class="nav-item is-active" href="accountant-invoice-list.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18H6z" stroke="currentColor" stroke-width="1.5"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Hóa đơn</span>
+      </a>
+      <a class="nav-item" href="accountant-customer-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Khách hàng</span>
+      </a>
+      <a class="nav-item" href="accountant-payment-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.5"/><path d="M7 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Thu tiền</span>
+      </a>
+      <a class="nav-item" href="accountant-debt-plan.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 15V9m4 6v-3m4 3V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Kế hoạch xử lý nợ</span>
+      </a>
+
+      <p class="nav-label">Phân tích</p>
+      <a class="nav-item" href="accountant-dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="16" width="7" height="5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Tổng quan</span>
+      </a>
+      <a class="nav-item" href="accountant-alerts.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cảnh báo</span>
+        <span class="nav-count">3</span>
+      </a>
+
+      <p class="nav-label">Hệ thống</p>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-audit-log.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Nhật ký hoạt động</span>
+      </a>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-settings.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cấu hình</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user">
+        <span class="avatar">A</span>
+        <span class="user-meta">
+          <span class="user-name">Nguyễn Văn A</span>
+          <span class="user-role">Kế toán</span>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================== MAIN ============================== -->
+  <div class="main">
+
+    <header class="topbar">
+      <nav class="crumb" aria-label="Đường dẫn">
+        <a href="accountant-dashboard.html">Kế toán</a>
+        <span class="crumb-sep">/</span>
+        <a href="accountant-invoice-list.html">Hóa đơn</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current" id="crumb-current">Tạo mới</span>
+      </nav>
+      <div class="topbar-actions">
+        <span class="autosave" id="autosave-note">Chưa có thay đổi</span>
+        <button class="btn-ghost btn-ghost--icon" type="button" aria-label="Trợ lý AI" data-goto="accountant-ai-dashboard.html">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </button>
+        <span class="topbar-avatar" title="Nguyễn Văn A">A</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ------------------------- PAGE HEAD ------------------------- -->
+      <section class="page-head">
+        <div>
+          <h1 class="page-title" id="page-title">Tạo hóa đơn</h1>
+          <p class="page-sub">
+            <span class="stamp stamp--neutral" id="mode-stamp">Nháp</span>
+            <span class="page-sub-text">Điền thông tin bên dưới · <span class="mono">Ctrl + S</span> để lưu nháp</span>
+          </p>
+        </div>
+        <div class="page-actions">
+          <a class="btn btn--ghost" href="accountant-invoice-list.html">Hủy</a>
+          <button class="btn btn--ghost" type="button" id="btn-draft">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 4v5h7M8 20v-6h8v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Lưu nháp
+          </button>
+          <button class="btn btn--primary" type="button" id="btn-issue">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Phát hành hóa đơn
+          </button>
+        </div>
+      </section>
+
+      <!-- --------------------- VALIDATION BAND ---------------------- -->
+      <div class="alert-band" id="form-alert" hidden role="alert">
+        <svg class="alert-ico" viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div class="alert-body">
+          <p class="alert-title">Không thể phát hành hóa đơn</p>
+          <ul class="alert-list" id="alert-list"></ul>
+        </div>
+        <button class="pop-close" type="button" id="alert-close" aria-label="Đóng">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <form class="form-grid" id="invoice-form" novalidate>
+
+        <!-- ======================= LEFT: FORM ======================= -->
+        <div class="form-col">
+
+          <!-- 01 · Thông tin chung -->
+          <section class="sec">
+            <header class="sec-head">
+              <span class="sec-num mono">01</span>
+              <h2 class="sec-title">Thông tin chung</h2>
+              <span class="sec-rule"></span>
+            </header>
+
+            <div class="sec-body">
+              <div class="field-grid field-grid--3">
+                <div class="field">
+                  <label class="field-label" for="f-code">Số hóa đơn <em>*</em></label>
+                  <input class="input input--mono" id="f-code" name="code" value="INV-2026-0201" autocomplete="off">
+                  <p class="field-hint">Định dạng <span class="mono">INV-YYYY-NNN</span></p>
+                  <p class="field-error" data-error-for="f-code" hidden></p>
+                </div>
+
+                <div class="field">
+                  <label class="field-label" for="f-issue-date">Ngày phát hành <em>*</em></label>
+                  <input class="input input--mono" type="date" id="f-issue-date" name="issueDate">
+                  <p class="field-error" data-error-for="f-issue-date" hidden></p>
+                </div>
+
+                <div class="field">
+                  <label class="field-label" for="f-due-date">Hạn thanh toán <em>*</em></label>
+                  <input class="input input--mono" type="date" id="f-due-date" name="dueDate">
+                  <p class="field-error" data-error-for="f-due-date" hidden></p>
+                </div>
+              </div>
+
+              <div class="field-grid field-grid--2">
+                <div class="field">
+                  <label class="field-label" for="f-customer">Khách hàng <em>*</em></label>
+                  <select class="input" id="f-customer" name="customerId">
+                    <option value="">— Chọn khách hàng —</option>
+                  </select>
+                  <p class="field-hint">
+                    Chưa có? <button type="button" class="link-btn" id="btn-new-customer">Tạo khách hàng mới</button>
+                  </p>
+                  <p class="field-error" data-error-for="f-customer" hidden></p>
+                </div>
+
+                <div class="field">
+                  <label class="field-label" for="f-tax-code">Mã số thuế</label>
+                  <input class="input input--mono" id="f-tax-code" name="taxCode" placeholder="0301234567" autocomplete="off">
+                  <p class="field-hint">Tự điền theo khách hàng, có thể sửa</p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="f-address">Địa chỉ / Người liên hệ</label>
+                <input class="input" id="f-address" name="address" placeholder="12 Nguyễn Văn Bảo, P.4, Q. Gò Vấp, TP.HCM · Nguyễn Thị Mai · 0901 234 567">
+              </div>
+            </div>
+          </section>
+
+          <!-- 02 · Chi tiết -->
+          <section class="sec">
+            <header class="sec-head">
+              <span class="sec-num mono">02</span>
+              <h2 class="sec-title">Chi tiết hóa đơn</h2>
+              <span class="sec-rule"></span>
+              <button class="link-btn" type="button" id="btn-add-row">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                Thêm dòng
+              </button>
+            </header>
+
+            <div class="sec-body sec-body--flush">
+              <div class="items-wrap">
+                <table class="items">
+                  <thead>
+                    <tr>
+                      <th class="i-name">Hàng hóa / Dịch vụ</th>
+                      <th class="i-unit">ĐVT</th>
+                      <th class="i-num">Số lượng</th>
+                      <th class="i-num">Đơn giá</th>
+                      <th class="i-vat">VAT</th>
+                      <th class="i-num">Thành tiền</th>
+                      <th class="i-del"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="items-body"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="5" class="i-foot-label">Tạm tính</td>
+                      <td class="i-num mono strong" id="items-subtotal">0 ₫</td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="quick-add">
+                <span class="quick-add-label">Thêm nhanh:</span>
+                <button class="chip chip--sm" type="button" data-quick="Dịch vụ kế toán tháng">Dịch vụ kế toán tháng</button>
+                <button class="chip chip--sm" type="button" data-quick="Phần mềm InvoicePilot">Phần mềm InvoicePilot</button>
+                <button class="chip chip--sm" type="button" data-quick="Tư vấn thuế">Tư vấn thuế</button>
+                <button class="chip chip--sm" type="button" data-quick="Đào tạo nội bộ">Đào tạo nội bộ</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 03 · Thuế -->
+          <section class="sec">
+            <header class="sec-head">
+              <span class="sec-num mono">03</span>
+              <h2 class="sec-title">Thuế &amp; Chiết khấu</h2>
+              <span class="sec-rule"></span>
+            </header>
+
+            <div class="sec-body">
+              <div class="field-grid field-grid--3">
+                <div class="field">
+                  <label class="field-label" for="f-discount">Chiết khấu thương mại (%)</label>
+                  <input class="input input--mono" type="number" id="f-discount" name="discountRate" min="0" max="100" step="0.5" value="0">
+                </div>
+                <div class="field">
+                  <label class="field-label" for="f-vat-default">Thuế suất mặc định</label>
+                  <select class="input" id="f-vat-default">
+                    <option value="10">10% — Hàng hóa, dịch vụ thông thường</option>
+                    <option value="8">8% — Nhóm ưu tiên</option>
+                    <option value="5">5% — Thiết yếu</option>
+                    <option value="0">0% — Xuất khẩu / không chịu thuế</option>
+                  </select>
+                  <p class="field-hint">Áp dụng cho các dòng mới thêm</p>
+                </div>
+                <div class="field">
+                  <label class="field-label" for="f-terms">Điều khoản thanh toán</label>
+                  <select class="input" id="f-terms">
+                    <option value="30">Trong vòng 30 ngày</option>
+                    <option value="15">Trong vòng 15 ngày</option>
+                    <option value="0">Thanh toán ngay</option>
+                    <option value="45">Trong vòng 45 ngày</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 04 · Ghi chú -->
+          <section class="sec">
+            <header class="sec-head">
+              <span class="sec-num mono">04</span>
+              <h2 class="sec-title">Ghi chú &amp; Điều khoản</h2>
+              <span class="sec-rule"></span>
+            </header>
+
+            <div class="sec-body">
+              <div class="field">
+                <label class="field-label" for="f-note-customer">Ghi chú cho khách hàng</label>
+                <textarea class="input" id="f-note-customer" rows="3" placeholder="Nội dung này sẽ hiển thị trên hóa đơn gửi khách hàng."></textarea>
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-note-internal">Ghi chú nội bộ</label>
+                <textarea class="input" id="f-note-internal" rows="2" placeholder="Chỉ đội kế toán nhìn thấy."></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== AI-1 INSPECTION ===================== -->
+          <section class="sec sec--ai" id="ai-section">
+            <header class="sec-head">
+              <span class="sec-num mono">AI</span>
+              <h2 class="sec-title">Kiểm tra bất thường</h2>
+              <span class="sec-rule"></span>
+              <button class="btn btn--ghost btn--sm" type="button" id="btn-ai-run">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.7L18.5 9.5 13.8 11.3 12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                Chạy kiểm tra
+              </button>
+            </header>
+
+            <div class="sec-body">
+              <p class="ai-note">
+                Mô hình <strong>AI-1</strong> đối chiếu dữ liệu nhập với lịch sử hóa đơn của khách hàng.
+                Kết quả chỉ là <strong>gợi ý tham khảo</strong> — mọi thay đổi đều cần bạn xác nhận trước khi áp dụng.
+              </p>
+              <div class="ai-findings" id="ai-findings">
+                <div class="ai-idle" id="ai-idle">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  <p>Chưa chạy kiểm tra. Bấm <strong>Chạy kiểm tra</strong> để AI-1 rà soát hóa đơn này.</p>
+                </div>
+              </div>
+              <p class="ai-log mono" id="ai-log" hidden></p>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ====================== RIGHT: SUMMARY ===================== -->
+        <aside class="summary-col">
+          <div class="summary">
+
+            <div class="summary-head">
+              <h2 class="summary-title">Tổng kết</h2>
+              <span class="stamp stamp--info" id="summary-stamp">Tạm tính</span>
+            </div>
+
+            <dl class="summary-list">
+              <div class="summary-row">
+                <dt>Tổng tiền hàng</dt>
+                <dd class="mono" id="sum-subtotal">0 ₫</dd>
+              </div>
+              <div class="summary-row">
+                <dt>Chiết khấu <span class="mono" id="sum-discount-rate">(0%)</span></dt>
+                <dd class="mono is-minus" id="sum-discount">−0 ₫</dd>
+              </div>
+              <div class="summary-row">
+                <dt>Thuế GTGT</dt>
+                <dd class="mono" id="sum-vat">0 ₫</dd>
+              </div>
+            </dl>
+
+            <div class="summary-total">
+              <p class="summary-total-label">Tổng cộng thanh toán</p>
+              <p class="summary-total-value mono" id="sum-total">0 ₫</p>
+            </div>
+
+            <p class="summary-words">
+              <span class="summary-words-label">Bằng chữ</span>
+              <span id="sum-words">Không đồng chẵn</span>
+            </p>
+
+            <div class="summary-progress">
+              <div class="progress-head">
+                <span class="progress-label">Độ hoàn thiện</span>
+                <span class="progress-value mono" id="progress-value">25%</span>
+              </div>
+              <div class="progress-bar"><span class="progress-fill" id="progress-fill"></span></div>
+              <ul class="progress-list" id="progress-list"></ul>
+            </div>
+
+            <div class="summary-foot">
+              <button class="btn btn--primary btn--block" type="button" id="btn-issue-2">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Phát hành hóa đơn
+              </button>
+              <button class="btn btn--ghost btn--block" type="button" id="btn-preview">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.6"/></svg>
+                Xem trước hóa đơn
+              </button>
+            </div>
+
+            <p class="summary-meta">
+              Người tạo <strong>Nguyễn Văn A</strong> · Kế toán<br>
+              <span class="mono" id="summary-updated">Cập nhật lần cuối —</span>
+            </p>
+          </div>
+        </aside>
+
+      </form>
+    </main>
+  </div>
+</div>
+
+<!-- ============================== MODAL ============================== -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <h2 class="modal-title" id="modal-title">Xác nhận</h2>
+    <p class="modal-desc" id="modal-desc"></p>
+    <div class="modal-actions">
+      <button class="btn btn--ghost" type="button" id="modal-cancel">Hủy bỏ</button>
+      <button class="btn btn--primary" type="button" id="modal-ok">Xác nhận</button>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="../../D%C3%B9ng%20chung/js/mock-data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/utils.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/api.js"></script>
+<script src="../js/invoice-form.js"></script>
+</body>
+</html>

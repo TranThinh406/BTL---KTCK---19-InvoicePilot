@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dự báo dòng tiền · InvoicePilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/manager-cashflow-forecast.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <a class="brand" href="../../D%C3%B9ng%20chung/html/index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">InvoicePilot</span>
+    </a>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <p class="nav-label">Quản lý</p>
+      <a class="nav-item" href="manager-dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="16" width="7" height="5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Tổng quan kinh doanh</span>
+      </a>
+      <a class="nav-item" href="manager-receivable-dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 9.5h18M7 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Công nợ phải thu</span>
+      </a>
+      <a class="nav-item" href="manager-overdue-invoices.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="17" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h8M8 12h8M8 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M15.5 15.5l4 4m0-4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Hóa đơn quá hạn</span>
+        <span class="nav-count">18</span>
+      </a>
+      <a class="nav-item" href="manager-sales-performance.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 19h16M7 19V9m5 10V5m5 14v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Hiệu quả kinh doanh</span>
+      </a>
+      <a class="nav-item" href="manager-reports.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h9l3 3v15H6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 13h6M9 17h6M9 9h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Báo cáo</span>
+      </a>
+      <a class="nav-item is-active" href="manager-cashflow-forecast.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 3 5-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Dự báo dòng tiền</span>
+      </a>
+
+      <p class="nav-label">Duyệt &amp; Cảnh báo</p>
+      <a class="nav-item" href="manager-pending-approvals.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Hồ sơ chờ duyệt</span>
+        <span class="nav-count">4</span>
+      </a>
+      <a class="nav-item" href="manager-alerts.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cảnh báo công nợ</span>
+        <span class="nav-count">3</span>
+      </a>
+      <a class="nav-item" href="manager-approval-policies.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.4-2.9 7.8-7 9-4.1-1.2-7-4.6-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Chính sách duyệt</span>
+      </a>
+
+      <p class="nav-label">Hệ thống</p>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-audit-log.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Nhật ký hoạt động</span>
+      </a>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-config-thresholds.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Ngưỡng cảnh báo</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user">
+        <span class="avatar">T</span>
+        <span class="user-meta">
+          <span class="user-name">Lê Minh Tuấn</span>
+          <span class="user-role">Quản lý công nợ</span>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================== MAIN ============================== -->
+  <div class="main">
+
+    <header class="topbar">
+      <nav class="crumb" aria-label="Đường dẫn">
+        <a href="manager-reports.html">Báo cáo</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current">Dự báo dòng tiền</span>
+      </nav>
+      <div class="topbar-actions">
+        <span class="stamp stamp--neutral mono" id="head-period">Kỳ 10/2026</span>
+        <span class="topbar-avatar" title="Lê Minh Tuấn">T</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ------------------------- PAGE HEAD ------------------------- -->
+      <section class="page-head">
+        <div>
+          <div class="head-line">
+            <h1 class="page-title">Dự báo dòng tiền</h1>
+            <span class="stamp stamp--info" id="head-horizon">7 tuần</span>
+          </div>
+          <p class="page-sub">
+            <span class="page-sub-text" id="head-sub">Toàn bộ đơn vị · vai trò Quản lý</span>
+            <span class="head-dot">·</span>
+            <span class="page-sub-text mono" id="head-updated">Cập nhật 12/10/2026 · 15:20</span>
+          </p>
+        </div>
+        <div class="page-actions">
+          <a class="btn btn--ghost" href="manager-overdue-invoices.html">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="17" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h8M8 12h8M8 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Hóa đơn quá hạn
+          </a>
+          <button class="btn btn--ghost" type="button" id="btn-export">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v3h14v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Xuất dự báo
+          </button>
+          <a class="btn btn--primary" href="manager-reports-export.html">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="17" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h8M8 12h8M8 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Lập báo cáo tài chính
+          </a>
+        </div>
+      </section>
+
+      <!-- --------------------------- PANEL ---------------------------- -->
+      <section class="panel" id="panel">
+
+        <div class="state-block" id="state-loading">
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <p class="state-note">Đang dựng dòng tiền 7 tuần từ sổ phải thu, lịch cam kết và kế hoạch chi…</p>
+        </div>
+
+        <div class="state-block state-block--error" id="state-error" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.5v5.5m0 3h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <p class="state-title">Không dựng được dự báo dòng tiền</p>
+          <p class="state-desc">Không đọc được dữ liệu kế hoạch chi và lịch thu. Bạn vẫn có thể xem công nợ phải thu và danh sách hóa đơn quá hạn.</p>
+          <button class="btn btn--ghost btn--sm" type="button" id="btn-retry">Thử lại</button>
+        </div>
+
+        <div class="state-block state-block--empty" id="state-empty" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3.5" width="16" height="17" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <p class="state-title">Chưa có dữ liệu để dựng dự báo</p>
+          <p class="state-desc">Kỳ dự báo cần ít nhất một khoản phải thu hoặc kế hoạch chi trong 7 tuần tới. Hãy nhập kế hoạch chi hoặc chờ hóa đơn đầu tiên được phát hành.</p>
+          <a class="btn btn--ghost btn--sm" href="manager-receivable-dashboard.html">Về tổng quan công nợ</a>
+        </div>
+
+        <div id="data-area" hidden>
+
+          <!-- KPI -->
+          <section class="kpi-row" id="kpi-row"></section>
+
+          <!-- CÔNG CỤ -->
+          <section class="toolbar">
+            <div class="sc-toggle" role="group" aria-label="Chọn kịch bản dự báo">
+              <span class="field-label">Kịch bản</span>
+              <div class="sc-btns">
+                <button class="sc-btn is-active" type="button" data-scenario="base">Cơ sở</button>
+                <button class="sc-btn" type="button" data-scenario="cautious">Thận trọng</button>
+              </div>
+            </div>
+            <p class="sc-desc" id="sc-desc"></p>
+            <div class="field field--threshold">
+              <label class="field-label" for="f-threshold">Ngưỡng an toàn (triệu ₫)</label>
+              <input class="input mono" id="f-threshold" type="number" min="0" step="10" value="150">
+            </div>
+          </section>
+
+          <!-- CẢNH BÁO THANH KHOẢN -->
+          <div class="alert-strip" id="alert-strip"></div>
+
+          <!-- BIỂU ĐỒ -->
+          <section class="chart-block">
+            <div class="band-head">
+              <p class="detail-title">Dòng tiền 7 tuần theo kịch bản <span id="chart-scenario">Cơ sở</span></p>
+              <div class="chart-legend">
+                <span><i class="dot dot--in"></i>Tiền vào</span>
+                <span><i class="dot dot--out"></i>Tiền ra</span>
+                <span><i class="dot dot--bal"></i>Số dư cuối kỳ</span>
+                <span><i class="dot dot--line"></i>Ngưỡng an toàn</span>
+              </div>
+            </div>
+            <div class="chart-wrap" id="chart-wrap">
+              <div class="chart" id="chart"></div>
+              <div class="chart-tip" id="chart-tip" hidden></div>
+            </div>
+          </section>
+
+          <!-- CƠ CẤU -->
+          <section class="split-row">
+            <div class="split-col">
+              <p class="detail-title">Cơ cấu nguồn thu trong kỳ</p>
+              <div class="comp" id="comp-in"></div>
+              <p class="comp-note" id="comp-in-note"></p>
+            </div>
+            <div class="split-col">
+              <p class="detail-title">Cơ cấu khoản chi trong kỳ</p>
+              <div class="comp" id="comp-out"></div>
+              <p class="comp-note" id="comp-out-note"></p>
+            </div>
+          </section>
+
+          <!-- BẢNG -->
+          <div class="table-wrap">
+            <table class="cf-table" id="cf-table">
+              <thead>
+                <tr>
+                  <th>Kỳ dự báo</th>
+                  <th class="num">Thu theo cam kết</th>
+                  <th class="num">Thu theo lịch</th>
+                  <th class="num">Thu hồi nợ quá hạn</th>
+                  <th class="num">Tổng thu</th>
+                  <th class="num">Tổng chi</th>
+                  <th class="num">Dòng tiền ròng</th>
+                  <th class="num">Số dư cuối kỳ</th>
+                  <th>Độ tin cậy</th>
+                </tr>
+              </thead>
+              <tbody id="cf-rows"></tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- -------------------------- NOTE STRIP ------------------------ -->
+      <section class="note-strip">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor"/></svg>
+        <p>
+          Dự báo dựng từ <strong>12/10/2026</strong> trên ba nguồn: cam kết thu của khách hàng
+          (<a href="manager-overdue-invoices.html">6 hóa đơn · 200 triệu ₫</a>), các khoản phải thu chưa tới hạn đến hạn trong kỳ,
+          và phần thu hồi dự kiến của nợ quá hạn. Khoản chi là cam kết cứng nên <strong>không đổi giữa hai kịch bản</strong>.
+          Riêng 152,5 triệu ₫ của An Phát (HD-2026-0731, đang tranh chấp) chưa đưa vào dự báo cho tới khi có xác nhận đối chiếu.
+        </p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============================== DRAWER ============================== -->
+<div class="drawer-overlay" id="drawer-overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" hidden>
+  <header class="drawer-head">
+    <div>
+      <p class="detail-title">Chi tiết kỳ dự báo</p>
+      <h2 class="drawer-title" id="drawer-title">—</h2>
+    </div>
+    <button class="drawer-close" type="button" id="drawer-close" aria-label="Đóng chi tiết">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+  <div class="drawer-body" id="drawer-body"></div>
+  <footer class="drawer-foot" id="drawer-foot"></footer>
+</aside>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="../../D%C3%B9ng%20chung/js/mock-data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/utils.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/api.js"></script>
+<script src="../js/manager-cashflow-forecast.js"></script>
+</body>
+</html>

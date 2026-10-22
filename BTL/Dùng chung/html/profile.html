@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hồ sơ cá nhân · InvoicePilot</title>
+<meta name="description" content="Xem và cập nhật thông tin tài khoản, mật khẩu và phiên hoạt động trên InvoicePilot.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="profile" data-layout="app" data-auth="required">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<main id="main">
+  <div class="page page--profile">
+    <header class="page-head">
+      <div>
+        <h1>Hồ sơ cá nhân</h1>
+        <p class="lead">Cập nhật thông tin liên hệ, mật khẩu và kiểm tra các phiên đăng nhập đang hoạt động.</p>
+      </div>
+      <span class="badge-soft">Dữ liệu lưu trên trình duyệt (mock)</span>
+    </header>
+
+    <div class="grid grid-2">
+      <!-- Cột trái: thông tin + mật khẩu -->
+      <div>
+        <section class="card">
+          <div class="card-head">
+            <h2>Thông tin tài khoản</h2>
+            <span class="avatar avatar-lg" id="pf-avatar" aria-hidden="true">IP</span>
+          </div>
+
+          <form id="profile-form" novalidate>
+            <div class="field">
+              <label class="label" for="pf-name">Họ và tên<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="pf-name" type="text" autocomplete="name" aria-describedby="pf-name-error" required>
+              <p class="field-error" id="pf-name-error" role="alert"></p>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="label" for="pf-email">Email</label>
+                <input class="input" id="pf-email" type="email" disabled aria-describedby="pf-email-hint">
+                <p class="hint" id="pf-email-hint">Email đăng nhập không thể thay đổi.</p>
+              </div>
+              <div class="field">
+                <label class="label" for="pf-phone">Số điện thoại</label>
+                <input class="input" id="pf-phone" type="tel" autocomplete="tel" placeholder="0901 234 567" aria-describedby="pf-phone-error">
+                <p class="field-error" id="pf-phone-error" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label class="label" for="pf-role">Vai trò</label>
+                <input class="input" id="pf-role" type="text" disabled>
+              </div>
+              <div class="field">
+                <label class="label" for="pf-dept">Phòng ban</label>
+                <input class="input" id="pf-dept" type="text" disabled>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit" id="profile-save">Lưu thay đổi</button>
+              <button class="btn btn-ghost" type="reset">Hủy</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2 style="font-size:1.18rem">Đổi mật khẩu</h2>
+          <form id="password-form" novalidate>
+            <div class="field">
+              <label class="label" for="pf-current-password">Mật khẩu hiện tại<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="pf-current-password" type="password" autocomplete="current-password" required aria-describedby="pf-current-password-error">
+              <p class="field-error" id="pf-current-password-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="pf-new-password">Mật khẩu mới<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="pf-new-password" type="password" autocomplete="new-password" required aria-describedby="pf-strength-label pf-new-password-error">
+              <div class="strength" id="pf-strength" data-score="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <p class="strength-label" id="pf-strength-label">Chưa nhập mật khẩu</p>
+              <p class="field-error" id="pf-new-password-error" role="alert"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="pf-confirm-password">Nhập lại mật khẩu mới<span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="pf-confirm-password" type="password" autocomplete="new-password" required aria-describedby="pf-confirm-password-error">
+              <p class="field-error" id="pf-confirm-password-error" role="alert"></p>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Cập nhật mật khẩu</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <!-- Cột phải: phiên + ghi chú -->
+      <div>
+        <section class="card">
+          <div class="card-head">
+            <h2>Phiên hoạt động</h2>
+            <span class="badge-soft">3 thiết bị</span>
+          </div>
+          <div id="session-list"></div>
+        </section>
+
+        <section class="card">
+          <p class="card-title-sm">Về dữ liệu của bạn</p>
+          <p class="text-small text-muted">InvoicePilot là nguyên mẫu Frontend phục vụ học phần CSE122. Toàn bộ dữ liệu người dùng được mô phỏng và lưu bằng LocalStorage trên trình duyệt của bạn — không có máy chủ thật, không gửi dữ liệu ra ngoài.</p>
+          <div class="info-banner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.2"/></svg>
+            <span>Muốn đưa sản phẩm vào vận hành thật? Cần bổ sung xác thực phía máy chủ, phân quyền API và mã hóa dữ liệu.</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../js/data.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

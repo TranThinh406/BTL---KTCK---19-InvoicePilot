@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InvoicePilot — Theo dõi hóa đơn và công nợ cho doanh nghiệp nhỏ</title>
+<meta name="description" content="InvoicePilot giúp doanh nghiệp nhỏ theo dõi trạng thái hóa đơn, công nợ khách hàng và dự báo dòng tiền bằng 3 trải nghiệm AI hỗ trợ quyết định.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="home" data-layout="public">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<div class="public-wrap">
+<main id="main" class="public-main">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">CSE122 · BTL-19 · Nguyên mẫu Frontend</span>
+        <h1>Theo dõi <em>hóa đơn</em> và <em>công nợ</em> cho doanh nghiệp nhỏ</h1>
+        <p class="lead">Quên hạn thanh toán, công nợ phân tán trên bảng tính, thiếu cái nhìn tổng thể — InvoicePilot gom toàn bộ vào một nơi, kèm ba trợ lý AI giúp phát hiện bất thường, soạn nhắc nợ và tóm tắt dòng tiền.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" id="hero-primary" href="../../%C4%90%C4%83ng%20nh%E1%BA%ADp/html/login.html">Dùng thử với vai trò Kế toán</a>
+          <a class="btn btn-ghost" href="#vai-tro">Xem các màn hình theo vai trò</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b><span data-count="4">0</span></b><span>Vai trò nghiệp vụ</span></div>
+          <div class="stat"><b><span data-count="16">0</span></b><span>Màn hình nền tảng</span></div>
+          <div class="stat"><b><span data-count="3">0</span></b><span>Trải nghiệm AI</span></div>
+          <div class="stat"><b><span data-count="6">0</span></b><span>Thực thể dữ liệu</span></div>
+        </div>
+      </div>
+
+      <!-- Khoảnh khắc thị giác: bảng dữ liệu nổi + thẻ AI -->
+      <div class="data-stack" aria-hidden="true">
+        <div class="data-panel">
+          <div class="data-panel-head">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <strong>Bảng công nợ · Tháng 03/2026</strong>
+            <span class="pill pill-green">Đồng bộ</span>
+          </div>
+          <div class="mini-kpis">
+            <div class="mini-kpi"><span>Công nợ phải thu</span><b>1,24 tỷ ₫</b></div>
+            <div class="mini-kpi red"><b>186 tr ₫</b><span>Quá hạn</span></div>
+            <div class="mini-kpi green"><span>Đã thu tháng này</span><b>412 tr ₫</b></div>
+          </div>
+          <table class="mini-table">
+            <thead><tr><th>Hóa đơn</th><th>Khách hàng</th><th class="num">Số tiền</th><th>Trạng thái</th></tr></thead>
+            <tbody>
+              <tr><td>INV-2026-021</td><td>CT TNHH An Phát</td><td class="num">86.500.000 ₫</td><td><span class="pill pill-green">Đúng hạn</span></td></tr>
+              <tr><td>INV-2026-018</td><td>CP Sài Gòn Foods</td><td class="num">42.000.000 ₫</td><td><span class="pill pill-amber">Sắp đến hạn</span></td></tr>
+              <tr><td>INV-2026-009</td><td>CT TNHH Minh Long</td><td class="num">57.800.000 ₫</td><td><span class="pill pill-red">Quá hạn 12 ngày</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ai-float">
+          <div class="ai-head"><span>AI-3 · Cashflow Summary</span></div>
+          <p>Dự báo 30 ngày tới giảm 8% do 4 hóa đơn lớn dồn vào tuần cuối tháng 4. Nên nhắc sớm nhóm khách hàng trễ trên 7 ngày.</p>
+          <div class="ai-actions">
+            <span class="btn btn-primary btn-sm">Chấp nhận</span>
+            <span class="btn btn-ghost btn-sm">Xem lý do</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Vấn đề ===== -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="eyebrow">Ngữ cảnh &amp; vấn đề</span>
+        <h2>Bốn điểm đau của kế toán doanh nghiệp nhỏ</h2>
+        <p>Mỗi màn hình trong InvoicePilot được thiết kế để xử lý đúng một vấn đề nghiệp vụ, không phải để đủ số lượng giao diện.</p>
+      </div>
+      <div class="grid grid-4">
+        <article class="feature-card"><div class="f-icon"></div><h3>P1 · Khó theo dõi trạng thái</h3><p>Mỗi hóa đơn có trạng thái rõ ràng: nháp, đã phát hành, sắp đến hạn, quá hạn, đã thanh toán, đã hủy.</p></article>
+        <article class="feature-card"><div class="f-icon"></div><h3>P2 · Nhắc hạn thủ công</h3><p>Lịch nhắc tự động và bản nháp AI giúp nhân viên kinh doanh gửi đúng lúc, đúng giọng điệu.</p></article>
+        <article class="feature-card"><div class="f-icon"></div><h3>P3 · Thông tin rời rạc</h3><p>Hồ sơ khách hàng gom lịch sử hóa đơn, thanh toán, ghi chú và điều khoản tín dụng tại một nơi.</p></article>
+        <article class="feature-card"><div class="f-icon"></div><h3>P4 · Thiếu dashboard công nợ</h3><p>Bảng điều khiển KPI, biểu đồ tuổi nợ và dự báo dòng tiền 30/60/90 ngày cho người quản lý.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Vai trò ===== -->
+  <section class="section section-alt" id="vai-tro">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="eyebrow">Nhiều vai trò, một hệ thống</span>
+        <h2>Chọn vai trò để xem hành trình nghiệp vụ</h2>
+        <p>Mỗi vai trò có ít nhất ba màn hình chuyên biệt, dùng chung dữ liệu và cùng một hệ thống thiết kế.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Vai trò trong InvoicePilot">
+        <button class="tab" role="tab" id="tab-acc"  aria-controls="panel-acc"  aria-selected="true"  tabindex="0">Kế toán</button>
+        <button class="tab" role="tab" id="tab-sale" aria-controls="panel-sale" aria-selected="false" tabindex="-1">Kinh doanh</button>
+        <button class="tab" role="tab" id="tab-mgr"  aria-controls="panel-mgr"  aria-selected="false" tabindex="-1">Quản lý</button>
+        <button class="tab" role="tab" id="tab-adm"  aria-controls="panel-adm"  aria-selected="false" tabindex="-1">Quản trị viên</button>
+      </div>
+
+      <div class="role-panel">
+        <section class="tab-panel" role="tabpanel" id="panel-acc" aria-labelledby="tab-acc" tabindex="0">
+          <h3>Kế toán</h3>
+          <p class="role-desc">Quản lý hóa đơn, ghi nhận phiếu thu và đối chiếu công nợ với sổ sách — nơi bắt đầu của mọi con số.</p>
+          <ul>
+            <li>Lập, sửa hóa đơn với nhiều dòng hàng và thuế suất</li>
+            <li>AI-1 rà soát bất thường trước khi phát hành</li>
+            <li>Ghi nhận thanh toán và đối chiếu tự động</li>
+            <li>Xuất báo cáo tuổi nợ theo khách hàng</li>
+          </ul>
+        </section>
+
+        <ul class="screen-list">
+          <li><a href="../../K%E1%BA%BF%20to%C3%A1n/html/accountant-invoice-list.html">Danh sách hóa đơn</a><span class="file">accountant-invoice-list.html</span></li>
+          <li><a href="../../K%E1%BA%BF%20to%C3%A1n/html/accountant-invoice-form.html">Lập hóa đơn + AI-1</a><span class="file">accountant-invoice-form.html</span></li>
+          <li><a href="../../K%E1%BA%BF%20to%C3%A1n/html/accountant-reconciliation.html">Đối chiếu công nợ</a><span class="file">accountant-reconciliation.html</span></li>
+        </ul>
+
+        <section class="tab-panel" role="tabpanel" id="panel-sale" aria-labelledby="tab-sale" tabindex="0" hidden>
+          <h3>Kinh doanh</h3>
+          <p class="role-desc">Theo dõi công nợ của từng khách hàng và chủ động nhắc thanh toán đúng hạn.</p>
+          <ul>
+            <li>Xem số dư công nợ theo khách hàng</li>
+            <li>AI-2 soạn thư nhắc thanh toán lịch sự</li>
+            <li>Ghi chú tương tác và lên lịch nhắc</li>
+            <li>Theo dõi phản hồi của khách hàng</li>
+          </ul>
+        </section>
+        <ul class="screen-list">
+          <li><a href="../../Kinh%20doanh/html/sales-customer-balance.html">Công nợ khách hàng</a><span class="file">sales-customer-balance.html</span></li>
+          <li><a href="../../Kinh%20doanh/html/sales-payment-reminders.html">Nhắc thanh toán + AI-2</a><span class="file">sales-payment-reminders.html</span></li>
+          <li><a href="../../Kinh%20doanh/html/sales-invoice-detail.html">Chi tiết hóa đơn</a><span class="file">sales-invoice-detail.html</span></li>
+        </ul>
+
+        <section class="tab-panel" role="tabpanel" id="panel-mgr" aria-labelledby="tab-mgr" tabindex="0" hidden>
+          <h3>Quản lý</h3>
+          <p class="role-desc">Nắm bức tranh công nợ toàn doanh nghiệp và dự báo dòng tiền các giai đoạn tới.</p>
+          <ul>
+            <li>Dashboard KPI công nợ và biểu đồ tuổi nợ</li>
+            <li>Xử lý danh sách hóa đơn quá hạn</li>
+            <li>AI-3 tóm tắt và dự báo dòng tiền</li>
+            <li>Theo dõi hiệu suất thu hồi theo nhân viên</li>
+          </ul>
+        </section>
+        <ul class="screen-list">
+          <li><a href="../../Qu%E1%BA%A3n%20l%C3%BD/html/manager-receivable-dashboard.html">Dashboard công nợ</a><span class="file">manager-receivable-dashboard.html</span></li>
+          <li><a href="../../Qu%E1%BA%A3n%20l%C3%BD/html/manager-overdue-invoices.html">Hóa đơn quá hạn</a><span class="file">manager-overdue-invoices.html</span></li>
+          <li><a href="../../Qu%E1%BA%A3n%20l%C3%BD/html/manager-cashflow-forecast.html">Dự báo dòng tiền + AI-3</a><span class="file">manager-cashflow-forecast.html</span></li>
+        </ul>
+
+        <section class="tab-panel" role="tabpanel" id="panel-adm" aria-labelledby="tab-adm" tabindex="0" hidden>
+          <h3>Quản trị viên</h3>
+          <p class="role-desc">Quản lý khách hàng, người dùng và toàn bộ cấu hình nghiệp vụ của hệ thống.</p>
+          <ul>
+            <li>Quản lý và lưu trữ hồ sơ khách hàng</li>
+            <li>Phân quyền, khóa/mở tài khoản người dùng</li>
+            <li>Cấu hình mẫu hóa đơn, thuế, đánh số</li>
+            <li>Theo dõi nhật ký hoạt động hệ thống</li>
+          </ul>
+        </section>
+        <ul class="screen-list">
+          <li><a href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-customer-management.html">Quản lý khách hàng</a><span class="file">admin-customer-management.html</span></li>
+          <li><a href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-user-management.html">Quản lý người dùng</a><span class="file">admin-user-management.html</span></li>
+          <li><a href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-invoice-settings.html">Cấu hình hóa đơn</a><span class="file">admin-invoice-settings.html</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AI ===== -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="eyebrow">Trải nghiệm AI có trách nhiệm</span>
+        <h2>AI đi cùng lý do và quyền kiểm soát của người dùng</h2>
+        <p>Mỗi tính năng AI đều đi qua đầy đủ: nhập dữ liệu → kiểm tra hợp lệ → đang xử lý → kết quả → giải thích → chấp nhận / sửa / từ chối / tạo lại.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="feature-card"><div class="f-icon"></div><h3>AI-1 · Invoice Anomaly Check</h3><p>Phát hiện trường thiếu, ngày hạn bất thường, số tiền lệch mặt bằng trước khi hóa đơn được phát hành.</p></article>
+        <article class="feature-card"><div class="f-icon"></div><h3>AI-2 · Reminder Draft</h3><p>Soạn sẵn ba phương án thư nhắc thanh toán — lịch sự, khẩn, chính thức — dựa trên số ngày trễ.</p></article>
+        <article class="feature-card"><div class="f-icon"></div><h3>AI-3 · Cashflow Summary</h3><p>Tóm tắt dòng tiền dự kiến 30/60/90 ngày và giải thích nguyên nhân biến động.</p></article>
+      </div>
+      <div class="info-banner" style="margin-top:22px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.2"/></svg>
+        <span>Mỗi AI feature đều có trạng thái thất bại: "Không đủ dữ liệu để đưa ra đề xuất" — kèm thao tác <strong>Thử lại</strong>, <strong>Sửa</strong>, <strong>Dùng thủ công</strong>.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Hành trình ===== -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="eyebrow">Hành trình người dùng</span>
+        <h2>Từ phát sinh hóa đơn đến quyết định thu hồi</h2>
+      </div>
+      <div class="step-list">
+        <div class="step"><h3>Khám phá &amp; đăng nhập</h3><p>Chọn vai trò phù hợp, hệ thống mở đúng nhóm màn hình nghiệp vụ.</p></div>
+        <div class="step"><h3>Thực hiện nghiệp vụ</h3><p>Lập hóa đơn, ghi nhận thanh toán, soạn nhắc nợ hoặc cấu hình hệ thống.</p></div>
+        <div class="step"><h3>AI hỗ trợ phân tích</h3><p>Nhận cảnh báo bất thường, bản nháp thư nhắc hoặc tóm tắt dòng tiền.</p></div>
+        <div class="step"><h3>Quyết định &amp; lưu</h3><p>Người dùng chấp nhận, sửa, từ chối kết quả rồi lưu vào trạng thái ứng dụng.</p></div>
+        <div class="step"><h3>Duyệt &amp; báo cáo</h3><p>Vai trò vận hành xử lý tiếp và số liệu xuất hiện trên dashboard.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../js/data.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đối soát công nợ · InvoicePilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reconciliation.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <a class="brand" href="../../D%C3%B9ng%20chung/html/index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">InvoicePilot</span>
+    </a>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <p class="nav-label">Nghiệp vụ</p>
+      <a class="nav-item" href="accountant-invoice-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18H6z" stroke="currentColor" stroke-width="1.5"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Hóa đơn</span>
+      </a>
+      <a class="nav-item" href="accountant-customer-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Khách hàng</span>
+      </a>
+      <a class="nav-item" href="accountant-payment-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.5"/><path d="M7 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Thu tiền</span>
+      </a>
+      <a class="nav-item is-active" href="accountant-reconciliation.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 8h13m0 0l-3-3m3 3l-3 3M20 16H7m0 0l3-3m-3 3l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Đối soát</span>
+      </a>
+      <a class="nav-item" href="accountant-debt-plan.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 15V9m4 6v-3m4 3V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Kế hoạch xử lý nợ</span>
+      </a>
+
+      <p class="nav-label">Phân tích</p>
+      <a class="nav-item" href="accountant-dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="16" width="7" height="5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Tổng quan</span>
+      </a>
+      <a class="nav-item" href="accountant-alerts.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cảnh báo</span>
+        <span class="nav-count">3</span>
+      </a>
+
+      <p class="nav-label">Hệ thống</p>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-audit-log.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Nhật ký hoạt động</span>
+      </a>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-settings.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cấu hình</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user">
+        <span class="avatar">T</span>
+        <span class="user-meta">
+          <span class="user-name">Trần Thị B</span>
+          <span class="user-role">Trưởng phòng Tài chính</span>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================== MAIN ============================== -->
+  <div class="main">
+
+    <header class="topbar">
+      <nav class="crumb" aria-label="Đường dẫn">
+        <a href="accountant-dashboard.html">Kế toán</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current">Đối soát công nợ</span>
+      </nav>
+      <div class="topbar-actions">
+        <div class="period-pick">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3.5 9.5h17M8 3.5V6m8-2.5V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span class="mono">Kỳ 10/2026</span>
+          <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <span class="topbar-avatar" title="Trần Thị B">T</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ------------------------- PAGE HEAD ------------------------- -->
+      <section class="page-head">
+        <div>
+          <h1 class="page-title">Đối soát công nợ</h1>
+          <p class="page-sub">
+            <span class="page-sub-text" id="page-sub">Ghép sổ cái nội bộ với sao kê ngân hàng, xử lý lệch lệch và khóa sổ kỳ 10/2026.</span>
+          </p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn--ghost" type="button" id="btn-export">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            Xuất biên bản
+          </button>
+          <button class="btn btn--primary" type="button" id="btn-import">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 20V9m0 0L8 13m4-4l4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 5h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            Nhập sao kê ngân hàng
+          </button>
+        </div>
+      </section>
+
+      <!-- -------------------------- STEPPER -------------------------- -->
+      <ol class="stepper" id="stepper" aria-label="Quy trình đối soát">
+        <li class="step is-current" data-step="1">
+          <button type="button" class="step-btn">
+            <span class="step-no mono">01</span>
+            <span class="step-text"><b>Nhập sao kê</b><i>Nạp dữ liệu ngân hàng</i></span>
+            <span class="step-mark"></span>
+          </button>
+        </li>
+        <li class="step" data-step="2">
+          <button type="button" class="step-btn">
+            <span class="step-no mono">02</span>
+            <span class="step-text"><b>Đối chiếu tự động</b><i>Ghép từng dòng</i></span>
+            <span class="step-mark"></span>
+          </button>
+        </li>
+        <li class="step" data-step="3">
+          <button type="button" class="step-btn">
+            <span class="step-no mono">03</span>
+            <span class="step-text"><b>Xử lý lệch lệch</b><i>Loại trừ sai khác</i></span>
+            <span class="step-mark"></span>
+          </button>
+        </li>
+        <li class="step" data-step="4">
+          <button type="button" class="step-btn">
+            <span class="step-no mono">04</span>
+            <span class="step-text"><b>Xác nhận ghép sổ</b><i>Khóa sổ kỳ kế toán</i></span>
+            <span class="step-mark"></span>
+          </button>
+        </li>
+        <li class="step" data-step="5">
+          <button type="button" class="step-btn">
+            <span class="step-no mono">05</span>
+            <span class="step-text"><b>Hoàn tất</b><i>Lưu chứng từ</i></span>
+            <span class="step-mark"></span>
+          </button>
+        </li>
+      </ol>
+
+      <!-- ---------------------- CONFLICT BANNER ---------------------- -->
+      <div class="alert-band alert-band--warn" id="conflict-band" hidden>
+        <svg class="alert-ico" viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div class="alert-body">
+          <p class="alert-title">Dữ liệu đã thay đổi trong lúc bạn thao tác</p>
+          <p class="alert-text" id="conflict-text"></p>
+        </div>
+        <button class="btn btn--ghost btn--sm" type="button" id="conflict-reload">Tải bản mới nhất</button>
+      </div>
+
+      <!-- ----------------------- WORKING AREA ------------------------ -->
+      <section class="panel" id="panel">
+
+        <!-- Loading -->
+        <div class="state-block" id="state-loading">
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row"></div>
+          <p class="state-note">Đang nạp dữ liệu đối soát kỳ 10/2026…</p>
+        </div>
+
+        <!-- Error -->
+        <div class="state-block state-block--error" id="state-error" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.5v5.5m0 3h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <p class="state-title">Không tải được dữ liệu đối soát</p>
+          <p class="state-desc">Mất kết nối tới máy chủ. Kỳ 10/2026 vẫn được giữ nguyên trạng thái trước đó.</p>
+          <button class="btn btn--ghost btn--sm" type="button" id="btn-retry">Thử lại</button>
+        </div>
+
+        <!-- Empty (chưa có sao kê) -->
+        <div class="state-block state-block--empty" id="state-empty" hidden>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h8l4 4v14H6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M14 3v4h4" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <p class="state-title">Chưa có sao kê ngân hàng cho kỳ 10/2026</p>
+          <p class="state-desc">Nạp tệp sao kê từ ngân hàng để bắt đầu đối chiếu với sổ cái nội bộ.</p>
+          <button class="btn btn--primary btn--sm" type="button" id="btn-import-2">Nhập sao kê ngân hàng</button>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="step-panel" data-panel="1" hidden>
+          <header class="panel-head">
+            <div>
+              <h2 class="panel-title">Nhập sao kê ngân hàng</h2>
+              <p class="panel-sub">Dữ liệu sao kê là nguồn chuẩn để đối chiếu. Hệ thống chỉ đọc, không chỉnh sửa tệp gốc.</p>
+            </div>
+            <button class="btn btn--ghost btn--sm" type="button" id="btn-replace">Thay tệp khác</button>
+          </header>
+
+          <div class="split">
+            <div class="file-card">
+              <div class="file-ico">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h8l4 4v14H6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 3v4h4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="file-body">
+                <p class="file-name mono" id="s-file">sao-ke-VCB-T10-2026.xlsx</p>
+                <p class="file-meta" id="s-meta">Vietcombank · Kỳ 10/2026 · Nạp bởi Nguyễn Văn A</p>
+              </div>
+              <span class="stamp stamp--success">Hợp lệ</span>
+            </div>
+
+            <dl class="facts facts--4">
+              <div class="fact"><dt>Số dòng sao kê</dt><dd class="mono" id="s-rows">128</dd></div>
+              <div class="fact"><dt>Tổng ghi Nợ</dt><dd class="mono" id="s-debit">4.286.500.000 ₫</dd></div>
+              <div class="fact"><dt>Tổng ghi Có</dt><dd class="mono" id="s-credit">2.914.300.000 ₫</dd></div>
+              <div class="fact"><dt>Thời điểm nạp</dt><dd class="mono" id="s-at">12/10/2026 · 08:05</dd></div>
+            </dl>
+          </div>
+
+          <h3 class="sub-title">Xem trước 5 dòng đầu tiên</h3>
+          <table class="mini">
+            <thead>
+              <tr><th>Ngày</th><th>Số chứng từ</th><th>Diễn giải</th><th class="num">Phát sinh</th></tr>
+            </thead>
+            <tbody id="preview-body"></tbody>
+          </table>
+
+          <footer class="panel-foot">
+            <span class="hint">Tiếp theo: chạy đối chiếu tự động để ghép từng dòng sao kê với chứng từ nội bộ.</span>
+            <button class="btn btn--primary" type="button" data-goto="2">Tiếp tục · Đối chiếu tự động</button>
+          </footer>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-panel" data-panel="2" hidden>
+          <header class="panel-head">
+            <div>
+              <h2 class="panel-title">Đối chiếu tự động</h2>
+              <p class="panel-sub">Mỗi dòng sao kê được ghép với chứng từ nội bộ dựa trên số tiền, ngày ghi và nội dung chuyển khoản.</p>
+            </div>
+            <button class="btn btn--ghost btn--sm" type="button" id="btn-rematch">Chạy lại đối chiếu</button>
+          </header>
+
+          <div class="kpi-strip">
+            <div class="kpi"><p class="kpi-label">Tổng dòng sao kê</p><p class="kpi-value mono" id="k-total">128</p></div>
+            <div class="kpi kpi--ok"><p class="kpi-label">Khớp hoàn toàn</p><p class="kpi-value mono" id="k-matched">96</p></div>
+            <div class="kpi kpi--warn"><p class="kpi-label">Khớp một phần</p><p class="kpi-value mono" id="k-partial">21</p></div>
+            <div class="kpi kpi--bad"><p class="kpi-label">Chưa khớp</p><p class="kpi-value mono" id="k-unmatched">11</p></div>
+            <div class="kpi kpi--rate">
+              <p class="kpi-label">Tỷ lệ khớp</p>
+              <p class="kpi-value mono" id="k-rate">90,6%</p>
+              <div class="meter"><span class="meter-fill" id="k-meter" style="width:90.6%"></span></div>
+            </div>
+          </div>
+
+          <div class="chip-bar" role="group" aria-label="Lọc theo mức khớp">
+            <button class="chip is-active" data-mfilter="all">Tất cả</button>
+            <button class="chip" data-mfilter="matched">Khớp hoàn toàn</button>
+            <button class="chip" data-mfilter="partial">Khớp một phần</button>
+            <button class="chip" data-mfilter="unmatched">Chưa khớp</button>
+          </div>
+
+          <div class="bridge-head">
+            <span>Sổ cái nội bộ</span>
+            <span class="bridge-head-mid">Mức khớp</span>
+            <span>Sao kê ngân hàng</span>
+          </div>
+          <div id="bridge-list"></div>
+          <div class="state-block state-block--empty state-inline" id="bridge-empty" hidden>
+            <p class="state-title">Không có dòng nào khớp bộ lọc</p>
+            <p class="state-desc">Thử chọn mức khớp khác để xem thêm kết quả.</p>
+          </div>
+
+          <footer class="panel-foot">
+            <span class="hint">Còn <b id="open-ex">11</b> dòng cần xử lý thủ công ở bước tiếp theo.</span>
+            <button class="btn btn--primary" type="button" data-goto="3">Tiếp tục · Xử lý lệch lệch</button>
+          </footer>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-panel" data-panel="3" hidden>
+          <header class="panel-head">
+            <div>
+              <h2 class="panel-title">Xử lý lệch lệch</h2>
+              <p class="panel-sub">Mỗi sai khác phải được xử lý theo một trong ba cách: ghép thủ công, ghi nhận chênh lệch, hoặc bỏ qua có ghi chú.</p>
+            </div>
+          </header>
+
+          <div class="delta-summary">
+            <div class="ds-item">
+              <p class="ds-label">Số dòng lệch</p>
+              <p class="ds-value mono" id="d-count">4</p>
+            </div>
+            <div class="ds-item">
+              <p class="ds-label">Tổng chênh lệch tuyệt đối</p>
+              <p class="ds-value mono" id="d-abs">90.500.000 ₫</p>
+            </div>
+            <div class="ds-item ds-item--net">
+              <p class="ds-label">Chênh lệch ròng</p>
+              <p class="ds-value mono is-over" id="d-net">+89.500.000 ₫</p>
+            </div>
+            <div class="ds-note">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor"/></svg>
+              Thanh chênh lệch mọc từ tâm: <b>sang phải</b> là tiền vào nhiều hơn chứng từ, <b>sang trái</b> là thiếu hụt.
+            </div>
+          </div>
+
+          <table class="exc">
+            <thead>
+              <tr>
+                <th class="e-type">Loại lệch</th>
+                <th class="e-ref">Chứng từ</th>
+                <th class="e-party">Đối tác</th>
+                <th class="e-delta">Chênh lệch</th>
+                <th class="e-bar">Phân bố</th>
+                <th class="e-status">Trạng thái</th>
+                <th class="e-act"></th>
+              </tr>
+            </thead>
+            <tbody id="exc-body"></tbody>
+          </table>
+
+          <div class="state-block state-block--empty state-inline" id="exc-empty" hidden>
+            <p class="state-title">Toàn bộ lệch lệch đã được xử lý</p>
+            <p class="state-desc">Bạn có thể chuyển sang bước xác nhận ghép sổ.</p>
+          </div>
+
+          <footer class="panel-foot">
+            <span class="hint" id="exc-hint">Chưa xử lý xong — cần xử lý toàn bộ trước khi khóa sổ.</span>
+            <button class="btn btn--primary" type="button" data-goto="4">Tiếp tục · Xác nhận ghép sổ</button>
+          </footer>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step-panel" data-panel="4" hidden>
+          <header class="panel-head">
+            <div>
+              <h2 class="panel-title">Xác nhận ghép sổ</h2>
+              <p class="panel-sub">Ghép sổ là thao tác khóa sổ. Sau khi xác nhận, kỳ 10/2026 không thể chỉnh sửa và chỉ được mở lại bởi Quản trị hệ thống.</p>
+            </div>
+          </header>
+
+          <div class="confirm-grid">
+            <div>
+              <p class="detail-title">Danh mục kiểm tra</p>
+              <ul class="checklist" id="checklist"></ul>
+            </div>
+            <div>
+              <p class="detail-title">Tổng hợp kỳ 10/2026</p>
+              <dl class="facts facts--stack">
+                <div class="fact fact--row"><dt>Tài khoản</dt><dd class="mono">VCB · 0071 0004 12345</dd></div>
+                <div class="fact fact--row"><dt>Số dòng sao kê</dt><dd class="mono">128</dd></div>
+                <div class="fact fact--row"><dt>Tổng ghi Nợ</dt><dd class="mono">4.286.500.000 ₫</dd></div>
+                <div class="fact fact--row"><dt>Tổng ghi Có</dt><dd class="mono">2.914.300.000 ₫</dd></div>
+                <div class="fact fact--row"><dt>Đã khớp</dt><dd class="mono">4.102.750.000 ₫</dd></div>
+                <div class="fact fact--row fact--strong"><dt>Chênh lệch cần xử lý</dt><dd class="mono">183.750.000 ₫</dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <footer class="panel-foot">
+            <span class="hint">Người xác nhận: <b>Trần Thị B</b> · Trưởng phòng Tài chính</span>
+            <div class="foot-acts">
+              <button class="btn btn--ghost" type="button" data-goto="3">Quay lại</button>
+              <button class="btn btn--primary" type="button" id="btn-confirm">Xác nhận ghép sổ</button>
+            </div>
+          </footer>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step-panel" data-panel="5" hidden>
+          <div class="finish">
+            <div class="finish-main">
+              <p class="finish-kicker mono">KỲ ĐỐI SOÁT 10/2026</p>
+              <h2 class="finish-title">Ghép sổ hoàn tất</h2>
+              <p class="finish-desc">Sổ cái nội bộ và sao kê ngân hàng đã khớp nhau. Chứng từ ghép sổ được lưu và không thể chỉnh sửa.</p>
+
+              <dl class="facts facts--3">
+                <div class="fact"><dt>Số chứng từ</dt><dd class="mono" id="f-code">GH-2026-10-001</dd></div>
+                <div class="fact"><dt>Thời điểm</dt><dd class="mono" id="f-at">—</dd></div>
+                <div class="fact"><dt>Người xác nhận</dt><dd id="f-by">Trần Thị B</dd></div>
+              </dl>
+
+              <div class="finish-acts">
+                <button class="btn btn--primary" type="button" id="btn-cert">Tải biên bản đối soát</button>
+                <button class="btn btn--ghost" type="button" data-goto="1">Xem lại dữ liệu kỳ này</button>
+              </div>
+            </div>
+
+            <div class="stamp-big" aria-hidden="true">
+              <span class="stamp-big-line">ĐÃ GHÉP SỔ</span>
+              <span class="stamp-big-sub mono">10 / 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------------------- TRACE (mọi bước) ---------------------- -->
+        <div class="trace-wrap">
+          <p class="detail-title">Nhật ký đối soát</p>
+          <div class="trace" id="trace"></div>
+        </div>
+      </section>
+
+      <!-- --------------------- RECONCILIATION NOTE --------------------- -->
+      <section class="note-strip">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 10.5V8a3.5 3.5 0 017 0v2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <p>
+          Kỳ 10/2026 chỉ được mở lại bởi <strong>Quản trị hệ thống</strong> và mọi thao tác mở khóa đều được ghi vào
+          <a href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-audit-log.html">nhật ký hoạt động</a> với đầy đủ thời gian, người thực hiện và lý do.
+        </p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============================== MODAL ============================== -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <h2 class="modal-title" id="modal-title">Xác nhận</h2>
+      <button class="pop-close" type="button" id="modal-x" aria-label="Đóng">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <p class="modal-desc" id="modal-desc"></p>
+
+    <!-- Xử lý lệch lệch -->
+    <div class="modal-form" id="modal-resolve" hidden>
+      <div class="field">
+        <label class="field-label" for="m-resolution">Cách xử lý <em>*</em></label>
+        <select class="input" id="m-resolution">
+          <option>Ghép thủ công với chứng từ khác</option>
+          <option>Ghi nhận chênh lệch</option>
+          <option>Bỏ qua có ghi chú</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field-label" for="m-note">Ghi chú <em>*</em></label>
+        <textarea class="input" id="m-note" rows="3" placeholder="Giải thích nguyên nhân sai khác để lưu vào biên bản."></textarea>
+        <p class="field-error" id="note-error" hidden>Vui lòng nhập ghi chú xử lý.</p>
+      </div>
+    </div>
+
+    <!-- Nhập sao kê -->
+    <div class="modal-form" id="modal-import" hidden>
+      <div class="field">
+        <label class="field-label" for="m-file">Tệp sao kê ngân hàng <em>*</em></label>
+        <input class="input input--mono" id="m-file" value="sao-ke-VCB-T10-2026.xlsx">
+        <p class="field-hint">Chấp nhận .xlsx, .csv tối đa 10 MB. Hệ thống chỉ đọc tệp, không lưu nội dung thẻ hay tài khoản ngoài phạm vi đối soát.</p>
+      </div>
+      <div class="field">
+        <label class="field-label" for="m-bank">Ngân hàng</label>
+        <select class="input" id="m-bank">
+          <option>Vietcombank</option><option>Techcombank</option><option>BIDV</option><option>MB Bank</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Xác nhận ghép sổ -->
+    <div class="modal-form" id="modal-agree" hidden>
+      <label class="agree">
+        <input type="checkbox" id="m-agree">
+        <span>Tôi đã kiểm tra toàn bộ số liệu và xác nhận khóa sổ kỳ 10/2026.</span>
+      </label>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn--ghost" type="button" id="modal-cancel">Hủy bỏ</button>
+      <button class="btn btn--primary" type="button" id="modal-ok">Xác nhận</button>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="../../D%C3%B9ng%20chung/js/mock-data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/utils.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/api.js"></script>
+<script src="../js/reconciliation.js"></script>
+</body>
+</html>

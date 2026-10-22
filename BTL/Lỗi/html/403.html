@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>403 · Không có quyền truy cập · InvoicePilot</title>
+<meta name="description" content="Bạn không có quyền truy cập trang này trong InvoicePilot.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/style.css">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/responsive.css">
+</head>
+<body data-page="403" data-layout="public">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<main id="main" class="error-page">
+  <div>
+    <p class="error-code">403</p>
+    <h1>Bạn không có quyền truy cập trang này</h1>
+    <p class="lead">Màn hình bạn yêu cầu thuộc phạm vi của vai trò khác trong InvoicePilot. Hãy quay lại khu vực phù hợp với vai trò của bạn.</p>
+
+    <div class="error-actions">
+      <a class="btn btn-primary" href="../../D%C3%B9ng%20chung/html/index.html">Về trang chủ</a>
+      <button class="btn btn-ghost" type="button" id="back-btn">Quay lại trang trước</button>
+      <a class="btn btn-ghost" href="../../%C4%90%C4%83ng%20nh%E1%BA%ADp/html/login.html">Đăng nhập vai trò khác</a>
+    </div>
+
+    <p class="error-detail">Yêu cầu: <strong id="requested-page">/admin-user-management.html</strong><br>Vai trò hiện tại: <span id="role-note">đang xác định…</span></p>
+
+    <div class="info-banner" style="max-width:520px;margin:26px auto 0;text-align:left">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.2"/></svg>
+      <span>Trong nguyên mẫu này, phân quyền chỉ được mô phỏng ở giao diện. Hệ thống thật cần kiểm tra quyền ở cả máy chủ lẫn API.</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../../D%C3%B9ng%20chung/js/data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/ui.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kế hoạch xử lý nợ · InvoicePilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/debt-plan.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <a class="brand" href="../../D%C3%B9ng%20chung/html/index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2V3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand-text">InvoicePilot</span>
+    </a>
+
+    <nav class="nav" aria-label="Điều hướng chính">
+      <p class="nav-label">Nghiệp vụ</p>
+      <a class="nav-item" href="accountant-invoice-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18H6z" stroke="currentColor" stroke-width="1.5"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Hóa đơn</span>
+      </a>
+      <a class="nav-item" href="accountant-customer-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Khách hàng</span>
+      </a>
+      <a class="nav-item" href="accountant-payment-list.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.5"/><path d="M7 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Thu tiền</span>
+      </a>
+      <a class="nav-item is-active" href="accountant-debt-plan.html" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 15V9m4 6v-3m4 3V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Kế hoạch xử lý nợ</span>
+      </a>
+
+      <p class="nav-label">Phân tích</p>
+      <a class="nav-item" href="accountant-dashboard.html">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="7" height="9" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="16" width="7" height="5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>Tổng quan</span>
+      </a>
+      <a class="nav-item" href="accountant-alerts.html">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cảnh báo</span>
+        <span class="nav-count">3</span>
+      </a>
+
+      <p class="nav-label">Hệ thống</p>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-audit-log.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Nhật ký hoạt động</span>
+      </a>
+      <a class="nav-item" href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-settings.html">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>Cấu hình</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="user">
+        <span class="avatar" id="user-avatar">T</span>
+        <span class="user-meta">
+          <span class="user-name" id="user-name">Trần Thị B</span>
+          <span class="user-role" id="user-role">Trưởng phòng Tài chính</span>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================== MAIN ============================== -->
+  <div class="main">
+
+    <header class="topbar">
+      <nav class="crumb" aria-label="Đường dẫn">
+        <a href="accountant-dashboard.html">Kế toán</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current">Kế hoạch xử lý nợ</span>
+      </nav>
+      <div class="topbar-actions">
+        <div class="role-switch" role="group" aria-label="Chuyển vai trò xem">
+          <span class="role-switch-label">Vai trò</span>
+          <button class="role-opt" type="button" data-role="staff">Kế toán</button>
+          <button class="role-opt is-active" type="button" data-role="manager">Trưởng phòng</button>
+        </div>
+        <span class="topbar-avatar" title="Trần Thị B">T</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ------------------------- PAGE HEAD ------------------------- -->
+      <section class="page-head">
+        <div>
+          <h1 class="page-title">Kế hoạch xử lý nợ</h1>
+          <p class="page-sub">
+            <span class="page-sub-text" id="page-sub">Đề xuất phương án xử lý công nợ, gửi duyệt và theo dõi tiến độ.</span>
+          </p>
+        </div>
+        <div class="page-actions">
+          <button class="btn btn--ghost" type="button" id="btn-export">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            Xuất Excel
+          </button>
+          <button class="btn btn--primary" type="button" id="btn-create">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            Tạo kế hoạch xử lý nợ
+          </button>
+        </div>
+      </section>
+
+      <!-- --------------------------- TABS ---------------------------- -->
+      <div class="tabs" role="tablist" aria-label="Nhóm kế hoạch">
+        <button class="tab is-active" role="tab" aria-selected="true" data-tab="mine">
+          Kế hoạch của tôi <span class="tab-count mono" data-count="mine">0</span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="awaiting">
+          Chờ tôi duyệt <span class="tab-count mono" data-count="awaiting">0</span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="team">
+          Kế hoạch nhóm <span class="tab-count mono" data-count="team">0</span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="all">
+          Tất cả kế hoạch <span class="tab-count mono" data-count="all">0</span>
+        </button>
+      </div>
+
+      <!-- -------------------------- TOOLBAR -------------------------- -->
+      <div class="toolbar">
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input class="input" id="f-search" placeholder="Tìm mã kế hoạch, khách hàng, người phụ trách…" aria-label="Tìm kiếm">
+        </div>
+        <select class="input input--filter" id="f-method" aria-label="Phương án">
+          <option value="">Tất cả phương án</option>
+          <option>Thanh toán nhiều kỳ</option>
+          <option>Chiết khấu thanh toán sớm</option>
+          <option>Gia hạn công nợ</option>
+          <option>Chuyển bộ phận pháp lý</option>
+        </select>
+        <select class="input input--filter" id="f-status" aria-label="Trạng thái">
+          <option value="">Tất cả trạng thái</option>
+          <option value="pending">Chờ duyệt</option>
+          <option value="approved">Đã duyệt</option>
+          <option value="executing">Đang thực hiện</option>
+          <option value="rejected">Từ chối</option>
+        </select>
+        <div class="date-range">
+          <input class="input input--mono input--date" type="date" id="f-from" aria-label="Từ ngày">
+          <span class="date-sep">→</span>
+          <input class="input input--mono input--date" type="date" id="f-to" aria-label="Đến ngày">
+        </div>
+        <button class="link-btn" type="button" id="btn-clear">Xóa bộ lọc</button>
+        <div class="toolbar-right">
+          <span class="result-count mono" id="result-count">0 kế hoạch</span>
+        </div>
+      </div>
+
+      <!-- --------------------- CONFLICT BANNER ----------------------- -->
+      <div class="alert-band alert-band--warn" id="conflict-band" hidden>
+        <svg class="alert-ico" viewBox="0 0 24 24" fill="none"><path d="M12 4 2.8 20h18.4L12 4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 10v4m0 3h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <div class="alert-body">
+          <p class="alert-title">Dữ liệu đã thay đổi trong lúc bạn thao tác</p>
+          <p class="alert-text" id="conflict-text"></p>
+        </div>
+        <button class="btn btn--ghost btn--sm" type="button" id="conflict-reload">Tải bản mới nhất</button>
+      </div>
+
+      <!-- -------------------------- TABLE ---------------------------- -->
+      <section class="panel">
+        <div class="table-wrap" id="table-wrap">
+          <table class="plans">
+            <thead>
+              <tr>
+                <th class="c-code">Mã kế hoạch</th>
+                <th class="c-customer">Khách hàng</th>
+                <th class="c-num">Số tiền đề xuất</th>
+                <th class="c-method">Phương án</th>
+                <th class="c-date">Thời hạn</th>
+                <th class="c-owner">Phụ trách</th>
+                <th class="c-rail">Tiến độ</th>
+                <th class="c-status">Trạng thái</th>
+                <th class="c-act"></th>
+              </tr>
+            </thead>
+            <tbody id="plans-body"></tbody>
+          </table>
+
+          <!-- Loading -->
+          <div class="state-block" id="state-loading">
+            <div class="skeleton-row"></div>
+            <div class="skeleton-row"></div>
+            <div class="skeleton-row"></div>
+            <div class="skeleton-row"></div>
+            <div class="skeleton-row"></div>
+            <p class="state-note">Đang tải danh sách kế hoạch…</p>
+          </div>
+
+          <!-- Empty -->
+          <div class="state-block state-block--empty" id="state-empty" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18l-3-2-2 2-2-2-2 2-2-2-3 2V3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M9 8h6M9 12h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <p class="state-title">Chưa có kế hoạch xử lý nợ nào</p>
+            <p class="state-desc">Thử thay đổi bộ lọc, hoặc tạo kế hoạch mới để bắt đầu theo dõi công nợ quá hạn.</p>
+            <button class="btn btn--primary btn--sm" type="button" id="btn-create-2">Tạo kế hoạch xử lý nợ</button>
+          </div>
+
+          <!-- Error -->
+          <div class="state-block state-block--error" id="state-error" hidden>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.5v5.5m0 3h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <p class="state-title">Không tải được dữ liệu</p>
+            <p class="state-desc">Kết nối tới máy chủ bị gián đoạn. Vui lòng thử lại sau ít phút.</p>
+            <button class="btn btn--ghost btn--sm" type="button" id="btn-retry">Thử lại</button>
+          </div>
+        </div>
+
+        <!-- ------------------------ PAGINATION ----------------------- -->
+        <footer class="pager-foot" id="pager-foot">
+          <p class="pager-range mono" id="pager-range">Hiển thị 0-0 / 0</p>
+          <nav class="pager" aria-label="Phân trang" id="pager"></nav>
+        </footer>
+      </section>
+
+      <!-- --------------------- APPROVAL GUIDANCE --------------------- -->
+      <section class="note-strip">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r=".9" fill="currentColor"/></svg>
+        <p>
+          Mọi thao tác <strong>Duyệt</strong> / <strong>Từ chối</strong> đều phải qua hộp thoại xác nhận và được ghi vào
+          <a href="../../Qu%E1%BA%A3n%20tr%E1%BB%8B/html/admin-audit-log.html">nhật ký hoạt động</a> với đầy đủ thời gian, người thực hiện và nội dung thay đổi.
+        </p>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============================== MODAL ============================== -->
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal modal--form" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+    <div class="modal-head">
+      <h2 class="modal-title" id="modal-title">Xác nhận</h2>
+      <button class="pop-close" type="button" id="modal-x" aria-label="Đóng">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <p class="modal-desc" id="modal-desc"></p>
+
+    <!-- Form tạo kế hoạch -->
+    <div class="modal-form" id="modal-form" hidden>
+      <div class="field">
+        <label class="field-label" for="m-customer">Khách hàng <em>*</em></label>
+        <select class="input" id="m-customer">
+          <option value="">— Chọn khách hàng —</option>
+        </select>
+      </div>
+      <div class="field-grid">
+        <div class="field">
+          <label class="field-label" for="m-amount">Số tiền đề xuất <em>*</em></label>
+          <input class="input input--mono" id="m-amount" placeholder="0">
+        </div>
+        <div class="field">
+          <label class="field-label" for="m-deadline">Thời hạn hoàn tất <em>*</em></label>
+          <input class="input input--mono" type="date" id="m-deadline">
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label" for="m-method">Phương án xử lý</label>
+        <select class="input" id="m-method">
+          <option>Thanh toán nhiều kỳ</option>
+          <option>Chiết khấu thanh toán sớm</option>
+          <option>Gia hạn công nợ</option>
+          <option>Chuyển bộ phận pháp lý</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field-label" for="m-note">Ghi chú cho người duyệt</label>
+        <textarea class="input" id="m-note" rows="3" placeholder="Cơ sở đề xuất, cam kết của khách hàng, rủi ro…"></textarea>
+      </div>
+    </div>
+
+    <!-- Lý do từ chối -->
+    <div class="modal-form" id="modal-reason" hidden>
+      <div class="field">
+        <label class="field-label" for="m-reason">Lý do từ chối <em>*</em></label>
+        <textarea class="input" id="m-reason" rows="3" placeholder="Nêu rõ căn cứ để người đề xuất biết cần bổ sung gì."></textarea>
+        <p class="field-error" id="reason-error" hidden>Vui lòng nhập lý do từ chối.</p>
+      </div>
+    </div>
+
+    <!-- Ghi chú khi duyệt -->
+    <div class="modal-form" id="modal-note" hidden>
+      <div class="field">
+        <label class="field-label" for="m-approve-note">Ghi chú phê duyệt</label>
+        <textarea class="input" id="m-approve-note" rows="3" placeholder="Không bắt buộc. Sẽ được lưu vào nhật ký hoạt động."></textarea>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn--ghost" type="button" id="modal-cancel">Hủy bỏ</button>
+      <button class="btn btn--primary" type="button" id="modal-ok">Xác nhận</button>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="../../D%C3%B9ng%20chung/js/mock-data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/utils.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/api.js"></script>
+<script src="../js/debt-plan.js"></script>
+</body>
+</html>

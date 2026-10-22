@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thông báo · InvoicePilot</title>
+<meta name="description" content="Trung tâm thông báo: hạn thanh toán, kết quả AI, phản hồi nhắc nợ và cập nhật hệ thống.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="notifications" data-layout="app" data-auth="required">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<main id="main">
+  <div class="page page--notifications">
+    <header class="page-head">
+      <div>
+        <h1>Thông báo</h1>
+        <p class="lead">Mọi cập nhật về hạn thanh toán, kết quả AI và hoạt động của hệ thống đều được tập hợp tại đây.</p>
+      </div>
+      <button class="btn btn-ghost" type="button" id="mark-all">Đánh dấu tất cả đã đọc</button>
+    </header>
+
+    <div class="card" style="margin-bottom:18px">
+      <div class="field" style="margin-bottom:0;max-width:420px">
+        <label class="sr-only" for="notif-search">Tìm trong thông báo</label>
+        <input class="input" id="notif-search" type="search" placeholder="Tìm theo nội dung, mã hóa đơn…">
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Lọc thông báo">
+      <button class="tab" role="tab" data-filter="all" aria-selected="true" tabindex="0">Tất cả <span class="count" id="count-all">0</span></button>
+      <button class="tab" role="tab" data-filter="unread" aria-selected="false" tabindex="-1">Chưa đọc <span class="count" id="count-unread">0</span></button>
+      <button class="tab" role="tab" data-filter="reminder" aria-selected="false" tabindex="-1">Nhắc nợ <span class="count" id="count-reminder">0</span></button>
+      <button class="tab" role="tab" data-filter="ai" aria-selected="false" tabindex="-1">Kết quả AI <span class="count" id="count-ai">0</span></button>
+    </div>
+
+    <ul class="notif-list" id="notif-list">
+      <!-- js/main.js kết xuất danh sách: đang tải → dữ liệu / rỗng -->
+    </ul>
+
+    <div class="info-banner" style="margin-top:22px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8v.2"/></svg>
+      <span>Mẹo: nhấn phím <strong>/</strong> ở thanh tiêu đề để tìm nhanh màn hình cần mở.</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../js/data.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

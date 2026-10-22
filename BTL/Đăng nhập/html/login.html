@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đăng nhập · InvoicePilot</title>
+<meta name="description" content="Đăng nhập InvoicePilot để quản lý hóa đơn và công nợ theo vai trò.">
+<script>try{var t=JSON.parse(localStorage.getItem('invoicepilot:theme')||'"light"');var d=t==='auto'?matchMedia('(prefers-color-scheme: dark)').matches:t==='dark';document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/style.css">
+<link rel="stylesheet" href="../../D%C3%B9ng%20chung/css/responsive.css">
+</head>
+<body data-page="login" data-layout="public">
+<a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+<div id="shell"></div>
+
+<main id="main" class="auth-shell">
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <div class="auth-head">
+        <div class="accent-line"></div>
+        <h1>Đăng nhập</h1>
+        <p class="lead">Đăng nhập để tiếp tục theo dõi hóa đơn và công nợ của doanh nghiệp.</p>
+      </div>
+
+      <div class="info-banner danger-banner" id="login-error" role="alert" hidden></div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label class="label" for="login-email">Email</label>
+          <input class="input" id="login-email" name="email" type="email" autocomplete="username"
+                 placeholder="ten@doanhnghiep.vn" aria-describedby="login-email-error" required>
+          <p class="field-error" id="login-email-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label class="label" for="login-password">Mật khẩu</label>
+          <div class="password-wrap">
+            <input class="input" id="login-password" name="password" type="password" autocomplete="current-password"
+                   aria-describedby="login-password-error" required>
+            <button class="password-toggle" type="button" id="toggle-password" aria-label="Hiện mật khẩu">Hiện</button>
+          </div>
+          <p class="field-error" id="login-password-error" role="alert"></p>
+        </div>
+
+        <div class="form-actions" style="justify-content:flex-end;margin-bottom:18px">
+          <a href="forgot-password.html">Quên mật khẩu?</a>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit" id="login-submit">Đăng nhập</button>
+      </form>
+
+      <div class="auth-alt">
+        <h2>Tài khoản dùng thử</h2>
+        <p class="text-small text-muted">Chọn vai trò để tự điền email và mật khẩu demo.</p>
+        <div class="form-actions">
+          <button class="btn btn-ghost btn-sm" type="button" data-demo="accountant">Kế toán</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-demo="sales">Kinh doanh</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-demo="manager">Quản lý</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-demo="admin">Quản trị</button>
+        </div>
+      </div>
+
+      <p class="auth-foot">Chưa có tài khoản? <a href="register.html">Đăng ký dùng thử</a></p>
+    </div>
+  </div>
+
+  <aside class="auth-visual">
+    <h2>Một không gian chung cho hóa đơn, công nợ và dòng tiền.</h2>
+    <p>Chọn vai trò phù hợp để tiếp tục công việc với các màn hình và dữ liệu mô phỏng của InvoicePilot.</p>
+    <div class="visual-metrics">
+      <div><b>4</b><span>Vai trò nghiệp vụ</span></div>
+      <div><b>3</b><span>Trợ lý AI</span></div>
+      <div><b>1</b><span>Nguồn dữ liệu chung</span></div>
+    </div>
+  </aside>
+</main>
+
+<div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="../../D%C3%B9ng%20chung/js/data.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/ui.js"></script>
+<script src="../../D%C3%B9ng%20chung/js/main.js"></script>
+</body>
+</html>
